@@ -102,6 +102,28 @@
     loop();
   }
 
+  // Capturas que se alternan en la pantalla del móvil
+  $$('[data-slides]').forEach((box) => {
+    const imgs = $$('.screen img', box), dots = box.parentElement.querySelector('.dots');
+    if (imgs.length < 2) return;
+    let i = 0, tm = null;
+    const show = (k) => {
+      i = (k + imgs.length) % imgs.length;
+      imgs.forEach((im, j) => im.classList.toggle('on', j === i));
+      if (dots) [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i));
+    };
+    const restart = () => { clearInterval(tm); if (!reduce) tm = setInterval(() => show(i + 1), 3600); };
+    if (dots) imgs.forEach((im, j) => {
+      const b = document.createElement('button'); b.type = 'button';
+      b.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Screenshot ' : 'Captura ') + (j + 1));
+      b.addEventListener('click', () => { show(j); restart(); }); dots.appendChild(b);
+    });
+    // Las demás capturas se cargan cuando la página ya está lista (no frenan la portada)
+    const loadRest = () => imgs.forEach((im) => { if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; } });
+    if (document.readyState === 'complete') loadRest(); else addEventListener('load', loadRest);
+    show(0); restart();
+  });
+
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
