@@ -137,7 +137,9 @@
   const splitIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); splitIO.unobserve(e.target); } }), { threshold: 0.3 });
   $$('[data-split]').forEach((h) => {
     let i = 0;
-    const walk = (node) => [...node.childNodes].forEach((n) => {
+    // Safari no pinta un degradado de texto (background-clip) a través de hijos con transform:
+    // el degradado se pasa a cada palabra.
+    const walk = (node, grad) => [...node.childNodes].forEach((n) => {
       if (n.nodeType === 3) {
         const frag = document.createDocumentFragment();
         n.textContent.split(/(\s+)/).forEach((w) => {
@@ -145,12 +147,17 @@
           if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(w)); return; }
           const o = document.createElement('span'); o.className = 'w';
           const inner = document.createElement('span'); inner.textContent = w; inner.style.setProperty('--i', i++);
+          if (grad) inner.className = 'grad-text';
           o.appendChild(inner); frag.appendChild(o);
         });
         n.replaceWith(frag);
-      } else if (n.nodeType === 1) walk(n);
+      } else if (n.nodeType === 1) {
+        const g = grad || n.classList.contains('grad-text');
+        n.classList.remove('grad-text');
+        walk(n, g);
+      }
     });
-    walk(h);
+    walk(h, false);
     if (reduce) h.classList.add('in'); else splitIO.observe(h);
   });
   // La línea del proceso se dibuja al verla

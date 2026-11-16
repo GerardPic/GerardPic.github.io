@@ -390,3 +390,24 @@ img { height: auto; }
 }
 .hero .chip.c3 { bottom: auto; top: 50%; left: -10%; }
 @media (max-width: 900px) { .hero .chip.c3 { left: 0; } }
+
+/* v5: proyectos destacados (Helios en horizontal) */
+.showcase.rev { grid-template-columns: 1fr minmax(320px, 620px); margin-top: 110px; }
+.hero-card .phone.land { width: min(600px, 92vw); border-radius: 40px; padding: 10px; animation: bob 7s ease-in-out infinite; }
+.hero-card .phone.land::before { top: 50%; left: 20px; translate: 0 -50%; width: 20px; height: 64px; }
+.hero-card .phone.land::after { right: auto; left: 160px; top: -3px; width: 60px; height: 3px; }
+.phone.land .screen { aspect-ratio: 20 / 9; border-radius: 30px; }
+.land-card .chip.c1 { top: -6%; left: 4%; } .land-card .chip.c2 { bottom: 4%; right: -2%; top: auto; }
+.tag.dev { background: linear-gradient(90deg, #22d3ee, #6366f1); color: #fff; border: 0; }
+.ticks { list-style: none; margin: 4px 0 6px; padding: 0; display: grid; gap: 10px; color: var(--mut); font-size: 16px; }
+.ticks li { position: relative; padding-left: 28px; }
+.ticks li::before { content: ''; position: absolute; left: 0; top: 0.35em; width: 16px; height: 16px; border-radius: 6px; background: var(--grad); -webkit-mask: radial-gradient(circle, #000 35%, transparent 36%); mask: radial-gradient(circle, #000 35%, transparent 36%); }
+.show-txt .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 900px) {
+  .showcase.rev { grid-template-columns: 1fr; margin-top: 80px; }
+  .showcase.rev .land-card { order: -1; }
+  .hero-card .phone.land { border-radius: 26px; padding: 7px; }
+  .phone.land .screen { border-radius: 20px; }
+  .hero-card .phone.land::before { left: 12px; width: 12px; height: 40px; }
+  .land-card .chip.c1 { top: -14%; left: 0; } .land-card .chip.c2 { bottom: -10%; right: 0; }
+}
