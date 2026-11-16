@@ -37,6 +37,9 @@ a { color: inherit; }
 .nav a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 3px; height: 2px; border-radius: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
 .nav a:hover, .nav a.on { color: var(--fg); }
 .nav a:hover::after, .nav a.on::after { transform: scaleX(1); }
+.nav a.lang { margin-left: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--fg); font-weight: 700; letter-spacing: 0.04em; }
+.nav a.lang::after { display: none; }
+.nav a.lang:hover { border-color: color-mix(in srgb, var(--a2) 60%, transparent); }
 
 /* Portada */
 .hero { position: relative; min-height: 100svh; display: grid; align-items: center; overflow: hidden; padding: 110px 0 70px; isolation: isolate; }

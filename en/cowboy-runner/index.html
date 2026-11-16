@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cowboy Runner · Gerard</title>
+<meta name="description" content="Cowboy Runner: a 3D endless runner through the Wild West. Over 10 characters, horses, four maps and a shop with over 180 items.">
+<meta name="theme-color" content="#0b0a10">
+<meta property="og:title" content="Cowboy Runner">
+<meta property="og:description" content="Run, jump and dodge through the Wild West!">
+<meta property="og:image" content="https://gerardpic.github.io/img/cowboy-runner-banner.png">
+<link rel="icon" href="../../img/cowboy-runner-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../estilo.css">
+<link rel="alternate" hreflang="es" href="https://gerardpic.github.io/cowboy-runner/">
+<link rel="alternate" hreflang="en" href="https://gerardpic.github.io/en/cowboy-runner/">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="logo">GP</span><span class="name">Gerard</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#screenshots">Screenshots</a>
+      <a href="#game">The game</a>
+      <a href="#help">Help</a>
+      <a href="../" class="opt">Home</a>
+      <a class="lang" href="../../cowboy-runner/" hreflang="es" lang="es" title="Español">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Cowboy Runner">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="grid-bg"></div>
+    <canvas aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <div>
+        <span class="pill"><span class="live"></span>Coming soon to Google Play</span>
+        <h1>
+          <span class="line"><span class="grad-text">Cowboy Runner</span></span>
+        </h1>
+        <p class="typed" data-typed='["Run, jump and dodge through the Wild West!", "Ride a horse and trigger the POWER UP.", "Over 10 characters who dance country.", "Four maps and over 180 items."]'><b></b><span class="caret"></span></p>
+        <div class="btns">
+          <span class="btn off" title="Available very soon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2.6v18.8c0 .6.6 1 1.1.7l16.3-9.4c.5-.3.5-1.1 0-1.4L5.1 1.9C4.6 1.6 4 2 4 2.6Z"/></svg>Google Play · very soon</span>
+          <a class="btn" href="#screenshots">See screenshots</a>
+        </div>
+      </div>
+      <div class="hero-card" data-tilt>
+        <div class="glow"></div>
+        <div class="phone"><img src="../../img/cr-1-bienvenida.jpg" alt="Cowboy Runner home screen with the characters and maps" width="1080" height="1920"></div>
+        <div class="chip c1"><span>🐎</span>POWER UP</div>
+        <div class="chip c2"><span>❄️</span>Snowy pass</div>
+        <div class="chip c3"><span>🎉</span>Mexican fiesta</div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <section id="screenshots">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Screenshots</span>
+      <h2 class="reveal" style="--d:.05s">A Wild West full of life</h2>
+      <p class="lead reveal" style="--d:.1s">Swipe to see more.</p>
+      <div class="shots reveal" style="--d:.15s">
+        <img src="../../img/cr-4-power-up.jpg" alt="POWER UP: the cowboy gallops on horseback with the elixir" loading="lazy" width="1080" height="1920">
+        <img src="../../img/cr-5-nieve.jpg" alt="Grizzly Bill the bear running through the snowy pass" loading="lazy" width="1080" height="1920">
+        <img src="../../img/cr-6-fiesta.jpg" alt="Don Burro running through the Mexican village fiesta" loading="lazy" width="1080" height="1920">
+        <img src="../../img/cr-7-noche.jpg" alt="Gecko Kid running through the mining camp at night" loading="lazy" width="1080" height="1920">
+        <img src="../../img/cr-2-tienda-personajes.jpg" alt="The character shop" loading="lazy" width="1080" height="1920">
+        <img src="../../img/cr-1-bienvenida.jpg" alt="Home screen with the high scores, characters and maps" loading="lazy" width="1080" height="1920">
+      </div>
+    </div>
+  </section>
+
+  <section id="game">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">The game</span>
+      <h2 class="reveal" style="--d:.05s">What awaits you</h2>
+      <div class="stats" style="margin:34px 0 18px">
+        <div class="stat reveal"><b class="grad-text" data-count="11" data-suffix="+">0</b><span>characters</span></div>
+        <div class="stat reveal" style="--d:.08s"><b class="grad-text" data-count="4">0</b><span>maps</span></div>
+        <div class="stat reveal" style="--d:.16s"><b class="grad-text" data-count="180" data-suffix="+">0</b><span>shop items</span></div>
+        <div class="stat reveal" style="--d:.24s"><b class="grad-text" data-count="6">0</b><span>original songs</span></div>
+      </div>
+      <div class="feats">
+        <div class="glowcard reveal"><div class="ic">🐎</div><h4>Horses and POWER UP</h4><p>The horseshoe puts you on a horse that jumps higher and doubles your coins. Add the elixir for an unstoppable turbo gallop!</p></div>
+        <div class="glowcard reveal" style="--d:.06s"><div class="ic">🤠</div><h4>Cowboys and critters</h4><p>Jesse Dust, Halcón Veloz, Gecko Kid, Sheriff Steel, Gus Pepita, Black Jack, Coyote Joe, Don Burro, Rocco Antifaz, Grizzly Bill and Toro Bravo.</p></div>
+        <div class="glowcard reveal" style="--d:.12s"><div class="ic">🗺️</div><h4>Four maps</h4><p>The canyon at sunset, the mining camp at night, the snowy pass and the Mexican village fiesta, each with its own obstacles.</p></div>
+        <div class="glowcard reveal" style="--d:.18s"><div class="ic">🎩</div><h4>Dress your way</h4><p>Hats, boots, suspenders, glasses, capes, guitars, spurs, trails and colorful horses for every character.</p></div>
+        <div class="glowcard reveal" style="--d:.24s"><div class="ic">🎵</div><h4>Original music</h4><p>A song for every character and Wild West sound effects: gallops, crashes and neighs.</p></div>
+        <div class="glowcard reveal" style="--d:.3s"><div class="ic">👆</div><h4>Simple controls</h4><p>Swipe sideways to switch lanes, up to jump and down to duck. Played with one finger.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="help">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="kicker grad-text">Help</span>
+        <h2>Questions or problems?</h2>
+        <p>The game is free, with ads and optional in-app purchases. No account needed: your progress is saved on your phone.</p>
+        <div class="btns">
+          <a class="btn main" data-mail="cowboyrunner.soporte|protonmail.com" href="#help"><span>Contact support</span></a>
+          <a class="btn" href="../../privacidad.html#en">Privacy policy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Gerard · GerardPic</span>
+    <span><a href="../">Home</a> · <a href="../../privacidad.html#en">Privacy policy</a></span>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('[data-mail]').forEach((a) => { const [u, d] = a.dataset.mail.split('|'), m = u + '@' + d; a.href = 'mailto:' + m; a.title = m; });
+</script>
+<script src="../../efectos.js" defer></script>
+</body>
+</html>
