@@ -360,3 +360,33 @@ section.band { background: linear-gradient(180deg, transparent, color-mix(in srg
 }
 
 .foot .wrap { display: block; }
+
+/* v4: primero la persona, después el juego */
+img { height: auto; }
+.hero-card .me { width: min(340px, 74vw); margin-inline: auto; }
+.me img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.about.solo { grid-template-columns: 1fr; max-width: 860px; }
+.showcase { display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: 64px; align-items: center; margin-bottom: 56px; }
+.game-card .phone { width: min(300px, 70vw); }
+.show-txt { display: grid; gap: 14px; justify-items: start; }
+.show-txt h3 { margin: 0; font: 800 clamp(34px, 4.4vw, 54px)/1.02 var(--head); letter-spacing: -0.03em; }
+.show-txt p { margin: 0; color: var(--mut); font-size: 18px; max-width: 520px; }
+.show-txt .btns { margin-top: 8px; }
+.tile { position: relative; }
+.tile img { position: absolute; inset: 0; }
+.bento { grid-auto-flow: dense; }
+.t-stack { grid-column: 1 / -1; }
+@media (max-width: 900px) {
+  .showcase { grid-template-columns: 1fr; gap: 44px; }
+  .bento { grid-auto-rows: minmax(170px, auto); }
+  .t-shot { grid-row: span 2; }
+}
+@media (max-width: 620px) {
+  .hero-card .me { width: min(300px, 76vw); }
+  .hero .btns { margin-top: 24px; }
+  .show-txt p { font-size: 16.5px; }
+  .chip { padding: 8px 11px; font-size: 12.5px; }
+  .chip span { font-size: 16px; }
+}
+.hero .chip.c3 { bottom: auto; top: 50%; left: -10%; }
+@media (max-width: 900px) { .hero .chip.c3 { left: 0; } }
