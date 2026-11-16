@@ -3,20 +3,212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cowboy Runner</title>
-<style>
-  :root { color-scheme: light dark; --bg: #fffaf2; --fg: #2a1a10; --acc: #c8566e; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #1c1210; --fg: #f6ead8; --acc: #ff8aa0; } }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 16px; text-align: center; }
-  a { color: var(--acc); }
-</style>
+<title>Gerardo Pico · Desarrollador móvil y de videojuegos</title>
+<meta name="description" content="Gerardo Pico (GerardPic): ingeniero informático, desarrollador full stack y móvil, y creador de Cowboy Runner, un juego de carreras sin fin para Android.">
+<meta name="theme-color" content="#0b0a10">
+<meta property="og:title" content="Gerardo Pico · Desarrollador móvil y de videojuegos">
+<meta property="og:description" content="Ingeniero informático, desarrollador full stack y móvil, y creador de Cowboy Runner.">
+<meta property="og:image" content="https://gerardpic.github.io/img/cowboy-runner-banner.png">
+<link rel="icon" href="img/cowboy-runner-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="logo">GP</span><span class="name">Gerardo Pico</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#juegos">Juegos</a>
+      <a href="#experiencia" class="opt">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<h1>Cowboy Runner</h1>
-<p>¡Corre, salta y esquiva en el viejo oeste! Un juego de carreras sin fin con vaqueros, animales y caballos.</p>
-<p><a href="privacidad.html">Política de privacidad</a></p>
+  <section class="hero" aria-label="Presentación">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="grid-bg"></div>
+    <canvas aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <div>
+        <span class="pill"><span class="live"></span>Cowboy Runner llega pronto a Google Play</span>
+        <h1>
+          <span class="line"><span>Hola, soy</span></span>
+          <span class="line"><span class="grad-text">Gerardo Pico</span></span>
+        </h1>
+        <p class="typed" data-typed='["Ingeniero informático.", "Desarrollador full stack y móvil.", "Creador de videojuegos para móviles.", "Convierto ideas en productos digitales."]'><b></b><span class="caret"></span></p>
+        <div class="btns">
+          <a class="btn main" href="cowboy-runner/">Conoce Cowboy Runner
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn" href="#contacto">Hablemos</a>
+        </div>
+      </div>
+      <div class="hero-card" data-tilt>
+        <div class="glow"></div>
+        <div class="phone"><img src="img/cr-4-power-up.jpg" alt="Cowboy Runner: el vaquero galopa a caballo durante el POWER UP" width="1080" height="1920"></div>
+        <div class="chip c1"><span>🤠</span>10+ personajes</div>
+        <div class="chip c2"><span>🗺️</span>4 mapas</div>
+        <div class="chip c3"><span>🎩</span>180+ objetos</div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <div class="marquee" aria-label="Tecnologías">
+    <div class="track">
+      <span><i>◆</i>React Native</span><span><i>◆</i>TypeScript</span><span><i>◆</i>React</span><span><i>◆</i>Next.js</span><span><i>◆</i>Node.js</span><span><i>◆</i>Nest.js</span><span><i>◆</i>Expo</span><span><i>◆</i>Three.js</span><span><i>◆</i>Java</span><span><i>◆</i>Python</span><span><i>◆</i>MySQL</span><span><i>◆</i>Oracle</span><span><i>◆</i>Supabase</span><span><i>◆</i>Git</span>
+      <span aria-hidden="true"><i>◆</i>React Native</span><span aria-hidden="true"><i>◆</i>TypeScript</span><span aria-hidden="true"><i>◆</i>React</span><span aria-hidden="true"><i>◆</i>Next.js</span><span aria-hidden="true"><i>◆</i>Node.js</span><span aria-hidden="true"><i>◆</i>Nest.js</span><span aria-hidden="true"><i>◆</i>Expo</span><span aria-hidden="true"><i>◆</i>Three.js</span><span aria-hidden="true"><i>◆</i>Java</span><span aria-hidden="true"><i>◆</i>Python</span><span aria-hidden="true"><i>◆</i>MySQL</span><span aria-hidden="true"><i>◆</i>Oracle</span><span aria-hidden="true"><i>◆</i>Supabase</span><span aria-hidden="true"><i>◆</i>Git</span>
+    </div>
+  </div>
+
+  <section id="sobre-mi">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Sobre mí</span>
+      <h2 class="reveal" style="--d:.05s">Convierto necesidades reales en <span class="grad-text">soluciones digitales</span></h2>
+      <p class="lead reveal" style="--d:.1s">Soy ingeniero informático y desarrollador full stack y móvil. Entiendo el proceso, identifico el problema real, defino el alcance y diseño la arquitectura. Trabajo por fases, con entregas claras y validadas. Ahora también creo mis propios videojuegos para móviles.</p>
+      <div class="stats">
+        <div class="stat reveal"><b class="grad-text" data-count="5" data-suffix="+">0</b><span>años desarrollando software</span></div>
+        <div class="stat reveal" style="--d:.08s"><b class="grad-text" data-count="2">0</b><span>idiomas: español nativo e inglés C1</span></div>
+        <div class="stat reveal" style="--d:.16s"><b class="grad-text" data-count="6">0</b><span>certificaciones y diplomados</span></div>
+        <div class="stat reveal" style="--d:.24s"><b class="grad-text" data-count="1">0</b><span>juego propio rumbo a Google Play</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="juegos">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Juegos</span>
+      <h2 class="reveal" style="--d:.05s">Mi primer videojuego</h2>
+      <p class="lead reveal" style="--d:.1s">Diseñado, programado, ilustrado y musicalizado de principio a fin. Todo el 3D, las animaciones y los efectos de sonido están hechos por código.</p>
+      <article class="glowcard project reveal" style="--d:.15s">
+        <div class="art"><img src="img/cowboy-runner-banner.png" alt="Cowboy Runner: ¡Corre, salta y esquiva en el viejo oeste!" width="1024" height="500" loading="lazy"></div>
+        <div class="body">
+          <div class="tags"><span class="tag hot">Próximamente en Google Play</span><span class="tag">Android</span><span class="tag">Three.js</span><span class="tag">AdMob</span><span class="tag">Play Billing</span></div>
+          <h3>Cowboy Runner</h3>
+          <p>Un juego de carreras sin fin en 3D por el viejo oeste: cambia de carril, salta barriles, agáchate bajo los letreros y monta a caballo para activar el POWER UP.</p>
+          <p>Más de 10 personajes animados, cuatro mapas, una tienda con más de 180 objetos y música original para cada personaje.</p>
+          <div class="btns" style="margin-top:6px"><a class="btn main" href="cowboy-runner/">Ver el juego</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Experiencia</span>
+      <h2 class="reveal" style="--d:.05s">Trayectoria profesional</h2>
+      <p class="lead reveal" style="--d:.1s">Desarrollo web y móvil, APIs, bases de datos e infraestructura tecnológica empresarial.</p>
+      <div class="timeline">
+        <div class="fill"></div>
+        <article class="glowcard job reveal">
+          <div class="when">Jun. 2024 — Actualidad</div>
+          <h3>Coordinador TI</h3>
+          <div class="where">Su Mano Derecha S.A.S.</div>
+          <ul>
+            <li>Desarrollo de gran parte del ERP corporativo de la empresa con React, Next.js, Nest.js y TypeScript.</li>
+            <li>Aplicaciones móviles multiplataforma con React Native y Expo, con funcionamiento sin conexión.</li>
+            <li>APIs REST y lógica de negocio con Node.js y Nest.js sobre MySQL y Oracle.</li>
+            <li>Administración de la infraestructura tecnológica y planeación de los proyectos de TI, con Scrum, Git y GitHub.</li>
+          </ul>
+        </article>
+        <article class="glowcard job reveal" style="--d:.1s">
+          <div class="when">Feb. 2020 — Abr. 2023</div>
+          <h3>Desarrollador Web</h3>
+          <div class="where">Capacitación 2000</div>
+          <ul>
+            <li>Sitios web institucionales responsivos con HTML5, CSS3, JavaScript, PHP, MySQL y WordPress.</li>
+            <li>Prototipos y aplicaciones móviles con React Native y Expo.</li>
+            <li>Contenido multimedia: video, fotografía, animación 2D y piezas gráficas.</li>
+          </ul>
+        </article>
+        <article class="glowcard job reveal" style="--d:.2s">
+          <div class="when">2026 — Hoy</div>
+          <h3>Desarrollador independiente de videojuegos</h3>
+          <div class="where">GerardPic</div>
+          <ul>
+            <li>Cowboy Runner: juego 3D para móviles con anuncios, compras dentro de la app y publicación en Google Play.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Habilidades</span>
+      <h2 class="reveal" style="--d:.05s">Con qué trabajo</h2>
+      <p class="lead reveal" style="--d:.1s">Me adapto rápido al stack de cada proyecto y uso herramientas actuales, incluida la IA, para trabajar mejor y más rápido.</p>
+      <div class="skills">
+        <div class="glowcard skill reveal"><div class="ic">📱</div><h4>Móvil y frontend</h4><p>React Native, Expo, React, Next.js, HTML5, CSS3, diseño responsivo, manejo de estados y autenticación.</p></div>
+        <div class="glowcard skill reveal" style="--d:.06s"><div class="ic">⚙️</div><h4>Backend y datos</h4><p>Node.js, Nest.js, Flask, APIs REST, MySQL, Oracle, Supabase y modelado de datos.</p></div>
+        <div class="glowcard skill reveal" style="--d:.12s"><div class="ic">🎮</div><h4>Videojuegos</h4><p>Gráficos 3D con Three.js, animación por código, audio con Web Audio, AdMob y Google Play Billing.</p></div>
+        <div class="glowcard skill reveal" style="--d:.18s"><div class="ic">☁️</div><h4>Infraestructura</h4><p>Servidores, cloud, dominios, hosting, correo corporativo, ERP, roles y permisos. Linux.</p></div>
+        <div class="glowcard skill reveal" style="--d:.24s"><div class="ic">🧭</div><h4>Negocio y procesos</h4><p>Levantamiento de requerimientos, análisis de procesos, priorización y documentación.</p></div>
+        <div class="glowcard skill reveal" style="--d:.3s"><div class="ic">🔁</div><h4>Forma de trabajo</h4><p>Scrum, Git y GitHub, pull requests, revisión de código y herramientas de IA.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Formación</span>
+      <h2 class="reveal" style="--d:.05s">Estudios y certificaciones</h2>
+      <div class="edu" style="margin-top:34px">
+        <div class="glowcard reveal">
+          <h4>Ingeniería Informática</h4>
+          <p>Universidad Militar Nueva Granada · Énfasis en desarrollo de software · 2021 – 2025</p>
+          <h4 style="margin-top:18px">Idiomas</h4>
+          <p>Español nativo · Inglés avanzado (C1, Kaplan Test of English)</p>
+        </div>
+        <div class="glowcard reveal" style="--d:.1s">
+          <ul>
+            <li><span>Scrum Fundamentals Certified (SFC™)</span><span>2024</span></li>
+            <li><span>Bases de Datos Oracle — Oracle Academy</span><span>2023</span></li>
+            <li><span>Diplomado Apps Móviles — Universidad Nacional</span><span>2023</span></li>
+            <li><span>Diplomado Desarrollo Web — UIS (800 h)</span><span>2022</span></li>
+            <li><span>Diplomados Software, Java y Python — UIS</span><span>2022</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="kicker grad-text">Contacto</span>
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p>Escríbeme para proyectos, colaboraciones o cualquier duda sobre mis juegos. Te respondo lo antes posible.</p>
+        <div class="btns">
+          <a class="btn main" data-mail="gerardopico123|gmail.com" href="#contacto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>Escríbeme</span></a>
+          <a class="btn" data-wa="57|322|754|8066" href="#contacto" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg><span>WhatsApp</span></a>
+          <a class="btn" href="https://www.linkedin.com/in/gerardpicolozano" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg><span>LinkedIn</span></a>
+        </div>
+        <p style="margin-top:22px;font-size:14.5px">Soporte de Cowboy Runner: <a data-mail="cowboyrunner.soporte|protonmail.com" href="#contacto">escribe a soporte</a></p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Gerardo Pico · GerardPic</span>
+    <span><a href="cowboy-runner/">Cowboy Runner</a> · <a href="privacidad.html">Política de privacidad</a></span>
+  </div>
+</footer>
+<script>
+  // El correo y el teléfono se montan al cargar para que los robots que recogen direcciones no los lean del HTML
+  document.querySelectorAll('[data-mail]').forEach((a) => { const [u, d] = a.dataset.mail.split('|'), m = u + '@' + d; a.href = 'mailto:' + m; a.title = m; if (!a.querySelector('span')) a.textContent = m; });
+  document.querySelectorAll('[data-wa]').forEach((a) => { const n = a.dataset.wa.split('|').join(''); a.href = 'https://wa.me/' + n; a.title = '+' + n.slice(0, 2) + ' ' + n.slice(2, 5) + ' ' + n.slice(5, 8) + ' ' + n.slice(8); });
+</script>
+<script src="efectos.js" defer></script>
 </body>
 </html>

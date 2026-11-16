@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cowboy Runner · Gerardo Pico</title>
+<meta name="description" content="Cowboy Runner: juego de carreras sin fin en 3D por el viejo oeste. Más de 10 personajes, caballos, cuatro mapas y una tienda con más de 180 objetos.">
+<meta name="theme-color" content="#0b0a10">
+<meta property="og:title" content="Cowboy Runner">
+<meta property="og:description" content="¡Corre, salta y esquiva en el viejo oeste!">
+<meta property="og:image" content="https://gerardpic.github.io/img/cowboy-runner-banner.png">
+<link rel="icon" href="../img/cowboy-runner-icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="logo">GP</span><span class="name">Gerardo Pico</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#capturas">Capturas</a>
+      <a href="#juego">El juego</a>
+      <a href="#ayuda">Ayuda</a>
+      <a href="../" class="opt">Inicio</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Cowboy Runner">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="grid-bg"></div>
+    <canvas aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <div>
+        <span class="pill"><span class="live"></span>Próximamente en Google Play</span>
+        <h1>
+          <span class="line"><span class="grad-text">Cowboy Runner</span></span>
+        </h1>
+        <p class="typed" data-typed='["¡Corre, salta y esquiva en el viejo oeste!", "Monta a caballo y activa el POWER UP.", "Más de 10 personajes que bailan country.", "Cuatro mapas y más de 180 objetos."]'><b></b><span class="caret"></span></p>
+        <div class="btns">
+          <span class="btn off" title="Disponible muy pronto">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2.6v18.8c0 .6.6 1 1.1.7l16.3-9.4c.5-.3.5-1.1 0-1.4L5.1 1.9C4.6 1.6 4 2 4 2.6Z"/></svg>Google Play · muy pronto</span>
+          <a class="btn" href="#capturas">Ver capturas</a>
+        </div>
+      </div>
+      <div class="hero-card" data-tilt>
+        <div class="glow"></div>
+        <div class="phone"><img src="../img/cr-1-bienvenida.jpg" alt="Pantalla principal de Cowboy Runner con los personajes y los mapas" width="1080" height="1920"></div>
+        <div class="chip c1"><span>🐎</span>POWER UP</div>
+        <div class="chip c2"><span>❄️</span>Paso nevado</div>
+        <div class="chip c3"><span>🎉</span>Fiesta mexicana</div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <section id="capturas">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Capturas</span>
+      <h2 class="reveal" style="--d:.05s">Un oeste lleno de vida</h2>
+      <p class="lead reveal" style="--d:.1s">Desliza para ver más.</p>
+      <div class="shots reveal" style="--d:.15s">
+        <img src="../img/cr-4-power-up.jpg" alt="POWER UP: el vaquero galopa a caballo con el elixir" loading="lazy" width="1080" height="1920">
+        <img src="../img/cr-5-nieve.jpg" alt="El oso Grizzly Bill corriendo por el paso nevado" loading="lazy" width="1080" height="1920">
+        <img src="../img/cr-6-fiesta.jpg" alt="Don Burro corriendo por la fiesta del pueblo mexicano" loading="lazy" width="1080" height="1920">
+        <img src="../img/cr-7-noche.jpg" alt="Gecko Kid corriendo de noche por el campamento minero" loading="lazy" width="1080" height="1920">
+        <img src="../img/cr-2-tienda-personajes.jpg" alt="La tienda de personajes" loading="lazy" width="1080" height="1920">
+        <img src="../img/cr-1-bienvenida.jpg" alt="Pantalla principal con los récords, los personajes y los mapas" loading="lazy" width="1080" height="1920">
+      </div>
+    </div>
+  </section>
+
+  <section id="juego">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">El juego</span>
+      <h2 class="reveal" style="--d:.05s">Qué te espera</h2>
+      <div class="stats" style="margin:34px 0 18px">
+        <div class="stat reveal"><b class="grad-text" data-count="11" data-suffix="+">0</b><span>personajes</span></div>
+        <div class="stat reveal" style="--d:.08s"><b class="grad-text" data-count="4">0</b><span>mapas</span></div>
+        <div class="stat reveal" style="--d:.16s"><b class="grad-text" data-count="180" data-suffix="+">0</b><span>objetos en la tienda</span></div>
+        <div class="stat reveal" style="--d:.24s"><b class="grad-text" data-count="6">0</b><span>canciones originales</span></div>
+      </div>
+      <div class="feats">
+        <div class="glowcard reveal"><div class="ic">🐎</div><h4>Caballos y POWER UP</h4><p>La herradura te sube a un caballo que salta más alto y duplica las monedas. Con el elixir a la vez, ¡galope turbo imparable!</p></div>
+        <div class="glowcard reveal" style="--d:.06s"><div class="ic">🤠</div><h4>Vaqueros y animales</h4><p>Jesse Dust, Halcón Veloz, Gecko Kid, Sheriff Steel, Gus Pepita, Black Jack, Coyote Joe, Don Burro, Rocco Antifaz, Grizzly Bill y Toro Bravo.</p></div>
+        <div class="glowcard reveal" style="--d:.12s"><div class="ic">🗺️</div><h4>Cuatro mapas</h4><p>El cañón al atardecer, el campamento minero de noche, el paso nevado y la fiesta del pueblo mexicano, cada uno con sus obstáculos.</p></div>
+        <div class="glowcard reveal" style="--d:.18s"><div class="ic">🎩</div><h4>Viste a tu manera</h4><p>Sombreros, botas, tirantas, gafas, capas, guitarras, espuelas, estelas y caballos de colores para cada personaje.</p></div>
+        <div class="glowcard reveal" style="--d:.24s"><div class="ic">🎵</div><h4>Música original</h4><p>Una canción para cada personaje y efectos del oeste: galopes, choques y relinchos.</p></div>
+        <div class="glowcard reveal" style="--d:.3s"><div class="ic">👆</div><h4>Controles sencillos</h4><p>Desliza a los lados para cambiar de carril, arriba para saltar y abajo para agacharte. Se juega con un dedo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ayuda">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="kicker grad-text">Ayuda</span>
+        <h2>¿Dudas o problemas?</h2>
+        <p>El juego es gratis, con anuncios y compras opcionales dentro de la app. No necesitas cuenta: tu progreso se guarda en tu móvil.</p>
+        <div class="btns">
+          <a class="btn main" data-mail="cowboyrunner.soporte|protonmail.com" href="#ayuda"><span>Escribir a soporte</span></a>
+          <a class="btn" href="../privacidad.html">Política de privacidad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Gerardo Pico · GerardPic</span>
+    <span><a href="../">Inicio</a> · <a href="../privacidad.html">Política de privacidad</a></span>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('[data-mail]').forEach((a) => { const [u, d] = a.dataset.mail.split('|'), m = u + '@' + d; a.href = 'mailto:' + m; a.title = m; });
+</script>
+<script src="../efectos.js" defer></script>
+</body>
+</html>
