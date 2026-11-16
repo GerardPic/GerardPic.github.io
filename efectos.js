@@ -124,6 +124,69 @@
     show(0); restart();
   });
 
+  // Cortina de entrada: se abre al cargar (como mucho a los 2,2 s)
+  const done = () => document.body.classList.add('loaded');
+  if (document.querySelector('.loader')) {
+    const t0 = performance.now();
+    const open = () => setTimeout(done, Math.max(0, 900 - (performance.now() - t0)));
+    if (document.readyState === 'complete') open(); else addEventListener('load', open);
+    setTimeout(done, 2200);
+  } else done();
+
+  // Títulos que aparecen palabra a palabra
+  const splitIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); splitIO.unobserve(e.target); } }), { threshold: 0.3 });
+  $$('[data-split]').forEach((h) => {
+    let i = 0;
+    const walk = (node) => [...node.childNodes].forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((w) => {
+          if (!w) return;
+          if (/^\s+$/.test(w)) { frag.appendChild(document.createTextNode(w)); return; }
+          const o = document.createElement('span'); o.className = 'w';
+          const inner = document.createElement('span'); inner.textContent = w; inner.style.setProperty('--i', i++);
+          o.appendChild(inner); frag.appendChild(o);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+    walk(h);
+    if (reduce) h.classList.add('in'); else splitIO.observe(h);
+  });
+  // La línea del proceso se dibuja al verla
+  const stepsIO = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); stepsIO.unobserve(e.target); } }), { threshold: 0.3 });
+  $$('.steps').forEach((el) => stepsIO.observe(el));
+
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  // Foco de luz que sigue al ratón
+  if (fine && !reduce) {
+    const spot = document.createElement('div'); spot.className = 'spot'; document.body.prepend(spot);
+    let sx = innerWidth / 2, sy = innerHeight / 2, tx = sx, ty = sy;
+    addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; document.body.classList.add('pointer'); }, { passive: true });
+    document.addEventListener('pointerleave', () => document.body.classList.remove('pointer'));
+    const follow = () => { sx += (tx - sx) * 0.12; sy += (ty - sy) * 0.12; spot.style.transform = 'translate(' + sx + 'px,' + sy + 'px)'; requestAnimationFrame(follow); };
+    follow();
+    // Botones magnéticos
+    $$('.magnet').forEach((b) => {
+      b.addEventListener('pointermove', (e) => {
+        const r = b.getBoundingClientRect(), x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2;
+        b.style.transform = 'translate(' + x * 0.22 + 'px,' + y * 0.32 + 'px)';
+      });
+      b.addEventListener('pointerleave', () => { b.style.transform = ''; });
+    });
+  }
+
+  // Parallax suave al hacer scroll
+  const par = $$('[data-par]');
+  if (par.length && !reduce) {
+    let ticking = false;
+    const apply = () => { ticking = false; const y = scrollY; par.forEach((el) => { el.style.translate = '0 ' + (y * +el.dataset.par) + 'px'; }); };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(apply); } }, { passive: true });
+  }
+
+  // Volver arriba
+  $$('.to-top').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }));
+
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
