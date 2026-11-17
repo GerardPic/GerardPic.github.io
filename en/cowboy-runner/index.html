@@ -19,7 +19,7 @@
 <link rel="alternate" hreflang="es" href="https://gerardpic.dev/cowboy-runner/">
 <link rel="alternate" hreflang="en" href="https://gerardpic.dev/en/cowboy-runner/">
 </head>
-<body>
+<body class="cr">
 <div class="progress" aria-hidden="true"></div>
 <header class="top">
   <div class="wrap">
@@ -36,13 +36,17 @@
 
 <main>
   <section class="hero" aria-label="Cowboy Runner">
-    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-    <div class="grid-bg"></div>
-    <canvas aria-hidden="true"></canvas>
+    <div class="cr-sky" aria-hidden="true"><div class="cr-sun"></div><div class="cr-rays"></div>
+      <div class="cr-hills">
+    <svg class="cr-h1" viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 70 L30 52 L52 60 L84 30 L118 58 L150 46 L176 62 L214 22 L252 56 L286 44 L318 60 L350 34 L382 52 L400 46 L400 120 L0 120 Z" fill="#7a2f3e" opacity="0.85"/></svg>
+    <svg class="cr-h2" viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 92 L24 84 L40 66 L58 66 L70 86 L120 92 L150 78 L170 80 L196 94 L250 90 L272 70 L300 70 L318 88 L360 92 L384 80 L400 84 L400 120 L0 120 Z" fill="#1f0d17"/><path d="M60 92 L62 70 L58 70 L58 64 M58 74 L52 74 L52 68 M62 78 L67 78 L67 72" stroke="#1f0d17" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M330 94 L331 76 M331 82 L326 82 L326 77 M331 86 L336 86 L336 80" stroke="#1f0d17" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="cr-dust" aria-hidden="true"><i style="left:8%;animation-duration:9s;animation-delay:-2s;opacity:0.6"></i><i style="left:19%;animation-duration:12s;animation-delay:-7s;opacity:0.4"></i><i style="left:31%;animation-duration:8s;animation-delay:-4s;opacity:0.7"></i><i style="left:44%;animation-duration:14s;animation-delay:-1s;opacity:0.35"></i><i style="left:57%;animation-duration:10s;animation-delay:-6s;opacity:0.55"></i><i style="left:66%;animation-duration:11s;animation-delay:-3s;opacity:0.45"></i><i style="left:78%;animation-duration:9s;animation-delay:-8s;opacity:0.6"></i><i style="left:90%;animation-duration:13s;animation-delay:-5s;opacity:0.4"></i><i style="left:25%;animation-duration:15s;animation-delay:-10s;opacity:0.3"></i><i style="left:72%;animation-duration:16s;animation-delay:-12s;opacity:0.3"></i></div>
+    </div>
     <div class="wrap hero-in">
       <div>
         <span class="pill"><span class="live"></span>Coming soon to Google Play</span>
-        <h1 class="crh1"><span class="sr">Cowboy Runner</span><span class="crl" aria-hidden="true"><svg class="crl-hat" viewBox="0 0 120 54" aria-hidden="true"><defs><linearGradient id="crHatG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a65b26"/><stop offset="1" stop-color="#4a220b"/></linearGradient></defs><path d="M34 38 C33 22 37 9 47 8 C52 7.5 55 12.5 60 12.5 C65 12.5 68 7.5 73 8 C83 9 87 22 86 38 Z" fill="url(#crHatG)" stroke="#241005" stroke-width="2.6" stroke-linejoin="round"/><path d="M34.6 30 C50 33.5 70 33.5 85.4 30 L86 38 C70 41.5 50 41.5 34 38 Z" fill="#c8411f" stroke="#241005" stroke-width="2"/><path d="M4 35 C10 29 22 33 34 37.5 C50 42 70 42 86 37.5 C98 33 110 29 116 35 C112 46 92 50.5 60 50.5 C28 50.5 8 46 4 35 Z" fill="url(#crHatG)" stroke="#241005" stroke-width="2.6" stroke-linejoin="round"/><path d="M42 14 C46 10 50 10 53 12" fill="none" stroke="#ffd98a" stroke-width="2" stroke-linecap="round" opacity="0.7"/><circle cx="60" cy="35.5" r="2.6" fill="#ffd36b" stroke="#241005" stroke-width="1.2"/></svg><span class="crl-cowboy" data-l="COWBOY"><span data-l="C" style="--i:0">C</span><span data-l="O" style="--i:1">O</span><span data-l="W" style="--i:2">W</span><span data-l="B" style="--i:3">B</span><span data-l="O" style="--i:4">O</span><span data-l="Y" style="--i:5">Y</span></span><span class="crl-run" data-l="RUNNER"><span class="crl-speed"><i></i><i></i><i></i></span><span data-l="RUNNER">RUNNER</span></span><span class="crl-tag">A race through the Wild West</span></span></h1>
+        <h1 class="crh1"><span class="sr">Cowboy Runner</span><span class="crl" aria-hidden="true"><svg class="crl-hat" viewBox="0 0 120 54" aria-hidden="true"><defs><linearGradient id="crHatG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a65b26"/><stop offset="1" stop-color="#4a220b"/></linearGradient></defs><path d="M34 38 C33 22 37 9 47 8 C52 7.5 55 12.5 60 12.5 C65 12.5 68 7.5 73 8 C83 9 87 22 86 38 Z" fill="url(#crHatG)" stroke="#241005" stroke-width="2.6" stroke-linejoin="round"/><path d="M34.6 30 C50 33.5 70 33.5 85.4 30 L86 38 C70 41.5 50 41.5 34 38 Z" fill="#c8411f" stroke="#241005" stroke-width="2"/><path d="M4 35 C10 29 22 33 34 37.5 C50 42 70 42 86 37.5 C98 33 110 29 116 35 C112 46 92 50.5 60 50.5 C28 50.5 8 46 4 35 Z" fill="url(#crHatG)" stroke="#241005" stroke-width="2.6" stroke-linejoin="round"/><path d="M42 14 C46 10 50 10 53 12" fill="none" stroke="#ffd98a" stroke-width="2" stroke-linecap="round" opacity="0.7"/><circle cx="60" cy="35.5" r="2.6" fill="#ffd36b" stroke="#241005" stroke-width="1.2"/></svg><span class="crl-cowboy" data-l="COWBOY"><span data-l="C" style="--i:0">C</span><span data-l="O" style="--i:1">O</span><span data-l="W" style="--i:2">W</span><span data-l="B" style="--i:3">B</span><span data-l="O" style="--i:4">O</span><span data-l="Y" style="--i:5">Y</span></span><span class="crl-run" data-l="RUNNER"><span class="crl-speed"><i></i><i></i><i></i></span><i class="crl-puff"></i><i class="crl-puff p2"></i><span data-l="RUNNER">RUNNER</span></span><span class="crl-tag">A race through the Wild West</span></span></h1>
         <p class="typed" data-typed='["Run, jump and dodge through the Wild West!", "Ride a horse and trigger the POWER UP.", "Over 10 characters who dance country.", "Four maps and over 180 items."]'><b></b><span class="caret"></span></p>
         <div class="btns">
           <span class="btn off" title="Available very soon">
