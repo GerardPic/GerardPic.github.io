@@ -194,13 +194,18 @@
   // Volver arriba
   $$('.to-top').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }));
 
-  // Logo de Cowboy Runner fuera de la cabecera: su animación espera a que se vea
-  if ('IntersectionObserver' in window) {
-    const crs = $$('.crl').filter((el) => !el.closest('.hero'));
-    const io = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.remove('late'); io.unobserve(e.target); }
-    }), { threshold: 0.4 });
-    crs.forEach((el) => { el.classList.add('late'); io.observe(el); });
+  // Logo de Cowboy Runner: empieza cuando ya cargó su letra (Rye), para que no cambie de forma ni salte
+  // a mitad de la animación; fuera de la cabecera espera además a que se vea
+  const crs = $$('.crl');
+  if (crs.length) {
+    const go = (el) => el.classList.remove('late');
+    const font = document.fonts && document.fonts.load ? document.fonts.load('400 1em Rye').catch(() => {}) : Promise.resolve();
+    Promise.race([font, new Promise((r) => setTimeout(r, 2500))]).then(() => requestAnimationFrame(() => {
+      const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
+        if (e.isIntersecting) { go(e.target); io.unobserve(e.target); }
+      }), { threshold: 0.35 }) : null;
+      crs.forEach((el) => (el.closest('.hero') || !io ? go(el) : io.observe(el)));
+    }));
   }
 
   // Año del pie
