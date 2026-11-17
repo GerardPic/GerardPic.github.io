@@ -1009,3 +1009,9 @@ body.smd ::selection { background: #f0b22d; color: #1a1209; }
 /* Tarjeta de SMD: el celular, más grande y con borde para que se distinga sobre la ventana */
 .smd-card .phone { right: -5%; bottom: -14%; width: 36%; z-index: 4; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(240, 178, 45, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.14); }
 @media (max-width: 900px) { .smd-card .phone { right: -3%; bottom: -16%; width: 34%; } }
+
+/* Animaciones de capturas en alta resolución (en lugar de videos): avanzan solas con un fundido corto */
+.vscreen .flipscreen { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+.flipscreen img { transform: none; transition: opacity 0.45s ease; }
+.flipscreen img.on { transform: none; }
+.smd-demo .vscreen { aspect-ratio: 640 / 1150; }

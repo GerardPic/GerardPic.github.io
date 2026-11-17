@@ -115,7 +115,9 @@
     // Solo se pasa a una captura que ya terminó de descargarse (si no, se vería vacía o su texto alternativo)
     const ready = (im) => !im.dataset.src && im.complete && im.naturalWidth > 0;
     const next = () => { for (let s = 1; s < imgs.length; s++) { const k = (i + s) % imgs.length; if (ready(imgs[k])) { show(k); return; } } };
-    const restart = () => { clearInterval(tm); if (!reduce) tm = setInterval(next, 3600); };
+    // Las animaciones de capturas (data-every) avanzan más rápido que los carruseles normales
+    const every = +box.dataset.every || 3600;
+    const restart = () => { clearInterval(tm); if (!reduce || box.dataset.every) tm = setInterval(next, every); };
     if (dots) imgs.forEach((im, j) => {
       const b = document.createElement('button'); b.type = 'button';
       b.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Screenshot ' : 'Captura ') + (j + 1));
