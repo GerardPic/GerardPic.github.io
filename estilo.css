@@ -850,3 +850,26 @@ body.ps ::selection { background: #bfef2b; color: #121312; }
 .ps-steps { margin-top: 40px; }
 @media (max-width: 900px) { .ps-cities { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .ps-why { grid-template-columns: 1fr; } }
+
+/* Proyectos agrupados por tipo: menú de tipos y cabecera de cada grupo */
+.ptypes { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 8px; }
+.ptypes a { display: inline-flex; align-items: center; gap: 9px; padding: 9px 12px 9px 14px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 14.5px; background: var(--card2); border: 1px solid var(--line); transition: transform 0.25s, border-color 0.25s; }
+.ptypes a:hover { transform: translateY(-2px); border-color: var(--a2); }
+.ptypes b { min-width: 24px; height: 24px; display: inline-grid; place-items: center; padding: 0 7px; border-radius: 999px; background: var(--grad); color: #fff; font-size: 12.5px; }
+.pgroup { scroll-margin-top: 90px; margin-top: 64px; }
+.pgroup + .pgroup { margin-top: 130px; }
+.pgroup-head { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.pgroup-ic { flex: none; width: 52px; height: 52px; display: grid; place-items: center; font-size: 26px; border-radius: 16px; background: var(--card2); border: 1px solid var(--line); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.06); }
+.pgroup-head h3 { margin: 0; font: 800 clamp(24px, 2.6vw, 32px)/1.1 var(--head); letter-spacing: -0.02em; }
+.pgroup-head p { margin: 2px 0 0; color: var(--mut); font-size: 15px; }
+.pgroup-n { margin-left: auto; flex: none; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; color: var(--mut); border: 1px solid var(--line); }
+.pgroup > .proj:first-of-type { margin-top: 44px; }
+@media (max-width: 900px) {
+  .pgroup { margin-top: 44px; }
+  .pgroup + .pgroup { margin-top: 72px; }
+  .pgroup > .proj:first-of-type { margin-top: 26px; }
+  .pgroup-head { gap: 12px; padding-bottom: 14px; }
+  .pgroup-ic { width: 44px; height: 44px; font-size: 22px; border-radius: 13px; }
+  .pgroup-n { display: none; }
+  .ptypes a { font-size: 14px; }
+}
