@@ -873,3 +873,19 @@ body.ps ::selection { background: #bfef2b; color: #121312; }
   .pgroup-n { display: none; }
   .ptypes a { font-size: 14px; }
 }
+
+/* Cowboy Runner: capturas de móvil alargado (20:9) y videos del juego que se cargan al verse */
+.phone.tall .screen { aspect-ratio: 9 / 20; }
+.shots.tall img { aspect-ratio: 9 / 20; }
+.vids { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 30px; }
+.vid { margin: 0; }
+.vscreen { position: relative; aspect-ratio: 9 / 20; border-radius: 26px; overflow: hidden; background: #2a1630; border: 6px solid #1c1420; box-shadow: var(--shadow); }
+.vscreen video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.vid figcaption { display: grid; gap: 2px; margin-top: 12px; text-align: center; }
+.vid figcaption b { font: 400 18px 'Rye', var(--head); color: #ffd36b; }
+.vid figcaption span { color: var(--mut); font-size: 14px; }
+.shots-h { margin: 30px 0 4px; font: 400 20px 'Rye', var(--head); color: #ffd36b; letter-spacing: 0.02em; }
+@media (max-width: 900px) {
+  .vids { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; gap: 14px; }
+  .vid { flex: 0 0 min(62vw, 260px); scroll-snap-align: start; }
+}

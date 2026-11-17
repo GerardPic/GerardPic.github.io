@@ -118,10 +118,18 @@
       b.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Screenshot ' : 'Captura ') + (j + 1));
       b.addEventListener('click', () => { show(j); restart(); }); dots.appendChild(b);
     });
-    // Las demás capturas se cargan cuando la página ya está lista (no frenan la portada)
+    // Las demás capturas solo se descargan cuando el carrusel se acerca a la pantalla,
+    // y el carrusel solo rota mientras se ve (así la página abre rápido y no gasta datos)
     const loadRest = () => imgs.forEach((im) => { if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; } });
-    if (document.readyState === 'complete') loadRest(); else addEventListener('load', loadRest);
-    show(0); restart();
+    show(0);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((es) => es.forEach((e) => {
+        if (e.isIntersecting) {
+          if (document.readyState === 'complete') loadRest(); else addEventListener('load', loadRest, { once: true });
+          restart();
+        } else clearInterval(tm);
+      }), { rootMargin: '300px 0px' }).observe(box);
+    } else { addEventListener('load', loadRest); restart(); }
   });
 
   // Cortina de entrada: se abre cuando la página cargó y ya se dibujó el logo (como mucho a los 2,8 s)
@@ -209,6 +217,19 @@
       els.forEach((el) => (el.closest('.hero') || !io ? go(el) : io.observe(el)));
     }));
   });
+
+  // Videos del juego: no se descargan hasta que se van a ver; se pausan al salir de pantalla
+  const vids = $$('video[data-src]');
+  if (vids.length) {
+    const load = (v) => { if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; } };
+    if (reduce) vids.forEach((v) => { v.controls = true; v.addEventListener('play', () => { if (v.dataset.src) { load(v); v.play().catch(() => {}); } }); });
+    else if ('IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((es) => es.forEach((e) => {
+        if (e.isIntersecting) { load(e.target); e.target.play().catch(() => {}); } else e.target.pause();
+      }), { rootMargin: '120px 0px', threshold: 0.25 });
+      vids.forEach((v) => vio.observe(v));
+    } else vids.forEach((v) => { load(v); v.play().catch(() => {}); });
+  }
 
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
