@@ -205,7 +205,7 @@
   // Logos animados de los proyectos (Cowboy Runner con Rye, Helios con Orbitron, Postal Sounds con Jost): empiezan cuando ya cargó
   // su letra, para que no cambien de forma ni salten a mitad de la animación; fuera de la cabecera
   // esperan además a que se vean
-  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron'], ['.pslogo', '700 1em Jost']].forEach(([sel, face]) => {
+  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron'], ['.pslogo', '700 1em Jost'], ['.smdlogo', '800 1em "Bricolage Grotesque"']].forEach(([sel, face]) => {
     const els = $$(sel);
     if (!els.length) return;
     const go = (el) => el.classList.remove('late');

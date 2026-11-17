@@ -889,3 +889,116 @@ body.ps ::selection { background: #bfef2b; color: #121312; }
   .vids { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; gap: 14px; }
   .vid { flex: 0 0 min(62vw, 260px); scroll-snap-align: start; }
 }
+
+/* ===================== SMD · Su Mano Derecha: landing (dorado de la marca sobre fondo cálido claro) ===================== */
+body.smd {
+  color-scheme: light;
+  --bg: #faf8f4; --bg2: #f3eee4; --card: rgba(255, 255, 255, 0.86); --card2: #ffffff;
+  --line: rgba(60, 40, 10, 0.12); --fg: #1a1209; --mut: #5c5040; --dim: #9e8e70;
+  --a1: #f0b22d; --a2: #ff8c00; --a3: #c38a0e; --a4: #1a1209;
+  --grad: linear-gradient(120deg, #f0b22d, #ff8c00);
+  --shadow: 0 30px 60px -30px rgba(70, 45, 5, 0.35);
+  background: radial-gradient(70% 45% at 90% 0%, rgba(240, 178, 45, 0.16), transparent 60%), var(--bg);
+  font-family: 'DM Sans', var(--body);
+}
+body.smd .top.solid { background: rgba(250, 248, 244, 0.86); }
+body.smd ::selection { background: #f0b22d; color: #1a1209; }
+.smd h1, .smd h2, .smd h3, .smd h4 { font-family: 'Bricolage Grotesque', var(--head); }
+.smd h2 { font-weight: 800; letter-spacing: -0.02em; }
+.smd .kicker { color: #c38a0e; font: 700 12.5px 'DM Sans', sans-serif; letter-spacing: 0.22em; }
+.smd .kicker::before { content: ""; width: 12px; height: 12px; background: #f0b22d; clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%); }
+.smd .btn.main { background: linear-gradient(120deg, #f0b22d, #ff8c00); color: #1a1209; box-shadow: 0 14px 30px -14px rgba(255, 140, 0, 0.7); }
+.smd .btn { border-color: rgba(60, 40, 10, 0.18); color: #1a1209; }
+.smd .stat b { font-family: 'Bricolage Grotesque', var(--head); }
+.smd .feats .glowcard, .smd .stat, .smd .smd-step, .smd .ps-facts { background: #fff; border: 1px solid rgba(60, 40, 10, 0.1); box-shadow: 0 18px 40px -32px rgba(70, 45, 5, 0.45); }
+.smd .feats h4 { font-size: 19px; }
+.smd .tag { background: #fff; border-color: rgba(60, 40, 10, 0.14); color: #5c5040; }
+.smd section + section { background-image: linear-gradient(90deg, transparent, rgba(240, 178, 45, 0.45), transparent); background-size: 70% 1px; background-repeat: no-repeat; background-position: 50% 0; }
+.smd .ps-facts dt { color: #9e8e70; }
+.smd .ps-facts a { color: #c38a0e; }
+
+/* Portada: fondo de plano de obra, hexágonos y tuercas que giran */
+.smd .hero { background: radial-gradient(90% 70% at 15% 10%, #fff6dd 0%, #faf8f4 55%, #f3eee4 100%); }
+.smd-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.smd-grid { position: absolute; inset: 0; background: linear-gradient(rgba(195, 138, 14, 0.09) 1px, transparent 1px) 0 0 / 44px 44px, linear-gradient(90deg, rgba(195, 138, 14, 0.09) 1px, transparent 1px) 0 0 / 44px 44px; -webkit-mask: radial-gradient(80% 70% at 50% 40%, #000, transparent 80%); mask: radial-gradient(80% 70% at 50% 40%, #000, transparent 80%); }
+.smd-nut { position: absolute; width: var(--s); aspect-ratio: 1; color: #f0b22d; opacity: 0.22; animation: smdSpin var(--t) linear infinite; }
+.smd-nut svg { width: 100%; height: 100%; display: block; }
+@keyframes smdSpin { to { transform: rotate(360deg); } }
+
+/* Logo SMD original animado por capas (misma técnica que en su landing): S y D salen del hexágono,
+   el hexágono con la llave entra girando como una tuerca, el nombre y la franja se descubren y pasa un destello */
+.smdlogo { position: relative; display: block; width: 100%; aspect-ratio: 390 / 214; }
+.smdlogo .p { position: absolute; inset: 0; }
+.smdlogo .p img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; max-width: none; }
+.smdlogo .s { clip-path: inset(0 69.487% 29.439% 0); animation: smdS 0.85s 0.55s cubic-bezier(.16, 1, .3, 1) both; }
+.smdlogo .d { clip-path: inset(0 0 29.439% 68.462%); animation: smdD 0.85s 0.55s cubic-bezier(.16, 1, .3, 1) both; }
+.smdlogo .hx { transform-origin: 49.487% 34.579%; transition: transform 1.1s cubic-bezier(.34, 1.56, .64, 1); }
+.smdlogo .hx .p { clip-path: inset(0 32.051% 29.439% 30.513%); transform-origin: 49.487% 34.579%; animation: smdHex 0.95s 0.1s cubic-bezier(.34, 1.56, .64, 1) both; }
+.smdlogo:hover .hx { transform: rotate(360deg); }
+.smdlogo .n { clip-path: inset(70.561% 0 15.421% 0); animation: smdName 0.8s 0.95s cubic-bezier(.16, 1, .3, 1) both; }
+.smdlogo .f { clip-path: inset(84.579% 0 0 0); animation: smdPill 0.7s 1.25s cubic-bezier(.16, 1, .3, 1) both; }
+.smdlogo .sh { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.9) 47%, rgba(255, 224, 150, 0.95) 53%, transparent 62%); background-size: 260% 100%; background-position: 130% 0; -webkit-mask: var(--m) 0 0 / 100% 100% no-repeat; mask: var(--m) 0 0 / 100% 100% no-repeat; animation: smdShine 1.1s 1.8s ease-in-out both; }
+.smdlogo.late, .smdlogo.late * { animation-play-state: paused !important; }
+@keyframes smdS { from { transform: translateX(16%); opacity: 0; } }
+@keyframes smdD { from { transform: translateX(-16%); opacity: 0; } }
+@keyframes smdHex { from { transform: scale(0.2) rotate(-120deg); opacity: 0; } }
+@keyframes smdName { from { clip-path: inset(70.561% 100% 15.421% 0); } }
+@keyframes smdPill { from { clip-path: inset(84.579% 50% 0 50%); } }
+@keyframes smdShine { from { background-position: 130% 0; } to { background-position: -30% 0; } }
+.smd-logo-card { display: inline-block; width: min(420px, 82vw); padding: 18px 26px; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px -34px rgba(70, 45, 5, 0.5), inset 0 0 0 1px rgba(60, 40, 10, 0.06); }
+.hero h1.smdh1 { margin: 18px 0 10px; line-height: 1; }
+.smd-tagline { margin: 4px 0 12px; font: 700 clamp(14px, 1.4vw, 16px)/1.4 'DM Sans', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #c38a0e; }
+.smd .hero .typed { color: #1a1209; }
+.smd .hero .pill { background: #fff; border-color: rgba(195, 138, 14, 0.35); color: #5c5040; }
+
+/* Ventana de navegador con la landing (escritorio) y un móvil encima */
+.browser { position: relative; border-radius: 16px; background: #fff; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(40, 25, 0, 0.55), 0 0 0 1px rgba(60, 40, 10, 0.12); }
+.browser-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #f1ece2; border-bottom: 1px solid rgba(60, 40, 10, 0.1); }
+.browser-bar i { width: 10px; height: 10px; border-radius: 50%; background: #e4d8c2; }
+.browser-bar i:nth-child(1) { background: #ff6159; } .browser-bar i:nth-child(2) { background: #ffbd2e; } .browser-bar i:nth-child(3) { background: #28c941; }
+.browser-bar b { flex: 1; margin-left: 10px; padding: 4px 12px; border-radius: 999px; background: #fff; font: 600 12.5px 'DM Sans', sans-serif; color: #5c5040; text-align: center; letter-spacing: 0.01em; }
+.browser-bar b::before { content: "🔒 "; font-size: 10px; }
+.browser .screen { aspect-ratio: 16 / 10; border-radius: 0; }
+.browser video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: #1a1209; }
+.smd-card { position: relative; }
+.smd-card .phone { position: absolute; right: -6%; bottom: -10%; width: 30%; border-radius: 26px; padding: 6px; }
+.smd-card .phone::before { top: 10px; width: 34px; height: 9px; }
+.smd-card .phone .screen { border-radius: 20px; }
+.smd-card .glow { background: radial-gradient(circle, rgba(240, 178, 45, 0.45), transparent 65%); }
+
+/* Capturas de escritorio */
+.shots.desk img { width: clamp(280px, 44vw, 560px); aspect-ratio: 16 / 10; border-radius: 14px; }
+.smd .shots img { border-color: rgba(60, 40, 10, 0.12); }
+.smd .shots-h { color: #c38a0e; font: 800 20px 'Bricolage Grotesque', var(--head); }
+.smd-vids { display: grid; grid-template-columns: 1fr minmax(200px, 280px); gap: 28px; align-items: center; margin-top: 30px; }
+.smd-vids .vscreen { border-color: #1a1209; }
+.smd-cap { margin-top: 10px; text-align: center; color: var(--mut); font-size: 14px; }
+
+/* Portada del sitio: tarjeta de la landing y su panel */
+.proj-smd { --pc: #f0b22d; --pc-bg: rgba(240, 178, 45, 0.12); --pc-line: rgba(195, 138, 14, 0.35); }
+.showcase.rev.desk { grid-template-columns: 1fr minmax(320px, 600px); }
+.show-txt h3.smdh3 { margin: 6px 0 4px; line-height: 1; }
+.show-txt .smd-logo-card { width: min(300px, 70vw); padding: 12px 18px; border-radius: 20px; }
+.tag.smdt { background: linear-gradient(120deg, #f0b22d, #ff8c00); color: #1a1209; border: 0; }
+
+@media (max-width: 900px) {
+  .smd-vids { grid-template-columns: 1fr; }
+  .smd-vids .vid { max-width: 280px; margin-inline: auto; }
+  .showcase.rev.desk { grid-template-columns: 1fr; }
+  .smd-card .phone { right: -2%; bottom: -14%; width: 28%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .smdlogo *, .smd-nut { animation: none !important; }
+}
+
+/* SMD: secciones de MAPP Enterprise IA y de la demo interactiva */
+.smd-split { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: center; }
+.smd-split.rev { grid-template-columns: minmax(220px, 300px) 1fr; }
+.smd-split .ticks { margin-top: 18px; }
+.smd-demo .vscreen { aspect-ratio: 400 / 622; border-radius: 30px; border: 0; background: #081723; box-shadow: 0 40px 70px -36px rgba(8, 23, 35, 0.8); }
+.smd-url { align-self: center; color: var(--dim); font-size: 14px; }
+#ia { background: linear-gradient(180deg, transparent, rgba(26, 18, 9, 0.04)); }
+@media (max-width: 900px) {
+  .smd-split, .smd-split.rev { grid-template-columns: 1fr; gap: 28px; }
+  .smd-demo { max-width: 300px; margin-inline: auto; }
+}
