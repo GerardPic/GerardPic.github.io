@@ -124,13 +124,13 @@
     show(0); restart();
   });
 
-  // Cortina de entrada: se abre al cargar (como mucho a los 2,2 s)
+  // Cortina de entrada: se abre cuando la página cargó y ya se dibujó el logo (como mucho a los 2,8 s)
   const done = () => document.body.classList.add('loaded');
   if (document.querySelector('.loader')) {
     const t0 = performance.now();
-    const open = () => setTimeout(done, Math.max(0, 900 - (performance.now() - t0)));
+    const open = () => setTimeout(done, Math.max(0, 1450 - (performance.now() - t0)));
     if (document.readyState === 'complete') open(); else addEventListener('load', open);
-    setTimeout(done, 2200);
+    setTimeout(done, 2800);
   } else done();
 
   // Títulos que aparecen palabra a palabra
