@@ -228,14 +228,26 @@
   // Videos del juego: no se descargan hasta que se van a ver; se pausan al salir de pantalla
   const vids = $$('video[data-src]');
   if (vids.length) {
-    const load = (v) => { if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; } };
-    if (reduce) vids.forEach((v) => { v.controls = true; v.addEventListener('play', () => { if (v.dataset.src) { load(v); v.play().catch(() => {}); } }); });
-    else if ('IntersectionObserver' in window) {
+    // Se reproducen solos siempre: silenciados y en línea, como exige Safari en iPhone
+    const load = (v) => {
+      v.muted = true; v.defaultMuted = true; v.playsInline = true;
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+      if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; v.load(); }
+    };
+    const visible = new Set();
+    const play = (v) => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
+    vids.forEach((v) => { v.muted = true; v.playsInline = true; v.loop = true; });
+    // Si el móvil bloquea la reproducción automática (iPhone en ahorro de energía), los videos
+    // visibles arrancan con el primer toque en cualquier parte de la página
+    const kick = () => visible.forEach((v) => { load(v); if (v.paused) play(v); });
+    ['touchend', 'click', 'keydown'].forEach((ev) => addEventListener(ev, kick, { passive: true }));
+    if ('IntersectionObserver' in window) {
       const vio = new IntersectionObserver((es) => es.forEach((e) => {
-        if (e.isIntersecting) { load(e.target); e.target.play().catch(() => {}); } else e.target.pause();
-      }), { rootMargin: '120px 0px', threshold: 0.25 });
+        const v = e.target;
+        if (e.isIntersecting) { visible.add(v); load(v); play(v); } else { visible.delete(v); if (!v.paused) v.pause(); }
+      }), { rootMargin: '150px 0px', threshold: 0.2 });
       vids.forEach((v) => vio.observe(v));
-    } else vids.forEach((v) => { load(v); v.play().catch(() => {}); });
+    } else vids.forEach((v) => { visible.add(v); load(v); play(v); });
   }
 
   // Año del pie

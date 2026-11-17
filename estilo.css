@@ -983,7 +983,7 @@ body.smd ::selection { background: #f0b22d; color: #1a1209; }
 
 @media (max-width: 900px) {
   .smd-vids { grid-template-columns: 1fr; }
-  .smd-vids .vid { max-width: 280px; margin-inline: auto; }
+  .smd-vids .vid:last-child { max-width: 280px; margin-inline: auto; }
   .showcase.rev.desk { grid-template-columns: 1fr; }
   .smd-card .phone { right: -2%; bottom: -14%; width: 28%; }
 }
@@ -1002,3 +1002,10 @@ body.smd ::selection { background: #f0b22d; color: #1a1209; }
   .smd-split, .smd-split.rev { grid-template-columns: 1fr; gap: 28px; }
   .smd-demo { max-width: 300px; margin-inline: auto; }
 }
+
+/* Videos: ancho fijo en el celular (no se encogen) */
+.smd-vids .vid, .smd-demo { width: 100%; }
+
+/* Tarjeta de SMD: el celular, más grande y con borde para que se distinga sobre la ventana */
+.smd-card .phone { right: -5%; bottom: -14%; width: 36%; z-index: 4; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(240, 178, 45, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.14); }
+@media (max-width: 900px) { .smd-card .phone { right: -3%; bottom: -16%; width: 34%; } }
