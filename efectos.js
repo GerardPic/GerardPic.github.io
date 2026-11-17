@@ -112,11 +112,18 @@
       imgs.forEach((im, j) => im.classList.toggle('on', j === i));
       if (dots) [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i));
     };
-    const restart = () => { clearInterval(tm); if (!reduce) tm = setInterval(() => show(i + 1), 3600); };
+    // Solo se pasa a una captura que ya terminó de descargarse (si no, se vería vacía o su texto alternativo)
+    const ready = (im) => !im.dataset.src && im.complete && im.naturalWidth > 0;
+    const next = () => { for (let s = 1; s < imgs.length; s++) { const k = (i + s) % imgs.length; if (ready(imgs[k])) { show(k); return; } } };
+    const restart = () => { clearInterval(tm); if (!reduce) tm = setInterval(next, 3600); };
     if (dots) imgs.forEach((im, j) => {
       const b = document.createElement('button'); b.type = 'button';
       b.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Screenshot ' : 'Captura ') + (j + 1));
-      b.addEventListener('click', () => { show(j); restart(); }); dots.appendChild(b);
+      b.addEventListener('click', () => {
+        if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; }
+        if (ready(im)) show(j); else im.addEventListener('load', () => show(j), { once: true });
+        restart();
+      }); dots.appendChild(b);
     });
     // Las demás capturas solo se descargan cuando el carrusel se acerca a la pantalla,
     // y el carrusel solo rota mientras se ve (así la página abre rápido y no gasta datos)
