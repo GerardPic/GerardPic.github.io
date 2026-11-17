@@ -194,6 +194,15 @@
   // Volver arriba
   $$('.to-top').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }));
 
+  // Logo de Cowboy Runner fuera de la cabecera: su animación espera a que se vea
+  if ('IntersectionObserver' in window) {
+    const crs = $$('.crl').filter((el) => !el.closest('.hero'));
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.remove('late'); io.unobserve(e.target); }
+    }), { threshold: 0.4 });
+    crs.forEach((el) => { el.classList.add('late'); io.observe(el); });
+  }
+
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
