@@ -1,24 +1,3 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Gerard">
-  <defs>
-    <linearGradient id="g" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffb547"/>
-      <stop offset="0.4" stop-color="#ff6b4a"/>
-      <stop offset="0.7" stop-color="#c8579a"/>
-      <stop offset="1" stop-color="#7a5cff"/>
-    </linearGradient>
-    <linearGradient id="t" x1="0" y1="0" x2="0" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#211c2e"/>
-      <stop offset="1" stop-color="#0d0b13"/>
-    </linearGradient>
-    <radialGradient id="h" cx="16" cy="10" r="26" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ff8a5c" stop-opacity="0.35"/>
-      <stop offset="1" stop-color="#ff8a5c" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect x="1" y="1" width="46" height="46" rx="14" fill="url(#t)"/>
-  <rect x="1" y="1" width="46" height="46" rx="14" fill="url(#h)"/>
-  <rect x="1.75" y="1.75" width="44.5" height="44.5" rx="13.25" fill="none" stroke="url(#g)" stroke-width="1.5" stroke-opacity="0.9"/>
-  <path d="M32.5 15.5 A12 12 0 1 0 36 24 H31.2" fill="none" stroke="url(#g)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M20 19.6 Q20 18.2 21.2 18.9 L27.6 22.8 Q28.7 23.5 27.6 24.2 L21.2 28.1 Q20 28.8 20 27.4 Z" fill="url(#g)"/>
-  <rect x="36.5" y="8.5" width="3.5" height="3.5" rx="0.8" fill="#7a5cff"/>
-</svg>
+<defs><linearGradient id="g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffb547"/><stop offset=".4" stop-color="#ff6b4a"/><stop offset=".7" stop-color="#c8579a"/><stop offset="1" stop-color="#7a5cff"/></linearGradient>
+</defs><rect width="48" height="48" rx="12" fill="#14111d"/><g fill="url(#g)"><rect x="16" y="10" width="3.6" height="3.6" rx="0.6"/><rect x="20" y="10" width="3.6" height="3.6" rx="0.6"/><rect x="24" y="10" width="3.6" height="3.6" rx="0.6"/><rect x="28" y="10" width="3.6" height="3.6" rx="0.6"/><rect x="32" y="10" width="3.6" height="3.6" rx="0.6"/><rect x="8" y="14" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="14" width="3.6" height="3.6" rx="0.6"/><rect x="36" y="14" width="3.6" height="3.6" rx="0.6"/><rect x="8" y="18" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="18" width="3.6" height="3.6" rx="0.6"/><rect x="8" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="24" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="28" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="32" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="36" y="22" width="3.6" height="3.6" rx="0.6"/><rect x="8" y="26" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="26" width="3.6" height="3.6" rx="0.6"/><rect x="32" y="26" width="3.6" height="3.6" rx="0.6"/><rect x="36" y="26" width="3.6" height="3.6" rx="0.6"/><rect x="8" y="30" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="30" width="3.6" height="3.6" rx="0.6"/><rect x="32" y="30" width="3.6" height="3.6" rx="0.6"/><rect x="36" y="30" width="3.6" height="3.6" rx="0.6"/><rect x="12" y="34" width="3.6" height="3.6" rx="0.6"/><rect x="16" y="34" width="3.6" height="3.6" rx="0.6"/><rect x="20" y="34" width="3.6" height="3.6" rx="0.6"/><rect x="24" y="34" width="3.6" height="3.6" rx="0.6"/><rect x="28" y="34" width="3.6" height="3.6" rx="0.6"/><rect x="32" y="34" width="3.6" height="3.6" rx="0.6"/></g><rect x="38" y="8" width="3.6" height="3.6" rx="0.6" fill="#ffb547"/></svg>
