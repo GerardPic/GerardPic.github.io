@@ -519,3 +519,138 @@ body.cr ::selection { background: #ff6b2c; }
 @media (max-width: 700px) {
   .cr .hero .crl { --s: clamp(40px, 13vw, 60px); }
 }
+
+/* ===================== Helios: identidad propia (sol roto, plasma, estación espacial) ===================== */
+body.hl {
+  color-scheme: dark;
+  --bg: #05060d; --bg2: #0b0e1b; --card: rgba(140, 220, 255, 0.04); --card2: rgba(140, 220, 255, 0.07);
+  --line: rgba(130, 210, 255, 0.14); --fg: #eef3ff; --mut: #9fabc8; --dim: #66708c;
+  --a1: #fff1c2; --a2: #ffb347; --a3: #4fd8ff; --a4: #8f7bff;
+  --grad: linear-gradient(120deg, #fff1c2, #ffc864 30%, #4fd8ff 72%, #8f7bff);
+  --shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.75);
+  background: radial-gradient(90% 50% at 85% 0%, rgba(79, 216, 255, 0.07), transparent 60%), radial-gradient(70% 40% at 0% 100%, rgba(255, 179, 71, 0.06), transparent 60%), var(--bg);
+}
+body.hl .top.solid { background: color-mix(in srgb, #05060d 82%, transparent); }
+body.hl ::selection { background: #4fd8ff; color: #05060d; }
+
+/* Espacio: estrellas que titilan, la estrella herida, columna de luz, ascuas y línea de escaneo */
+.hl .hero { background: radial-gradient(120% 80% at 70% 110%, #2a1430 0%, #120a22 40%, #05060d 75%); }
+.hl-space { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.hl-stars { position: absolute; inset: -50%; background-repeat: repeat; }
+.hl-stars.s1 { background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(1px 1px at 130px 80px, #cfe9ff, transparent), radial-gradient(1px 1px at 70px 160px, #fff, transparent), radial-gradient(1px 1px at 190px 140px, #ffe7c2, transparent); background-size: 220px 200px; opacity: 0.55; animation: hlDrift 140s linear infinite; }
+.hl-stars.s2 { background-image: radial-gradient(1.5px 1.5px at 60px 110px, #fff, transparent), radial-gradient(1.5px 1.5px at 260px 40px, #bfefff, transparent), radial-gradient(1.5px 1.5px at 170px 230px, #fff, transparent); background-size: 330px 300px; opacity: 0.7; animation: hlDrift 90s linear infinite, hlTwinkle 4s ease-in-out infinite; }
+.hl-stars.s3 { background-image: radial-gradient(2px 2px at 120px 60px, #fff8e0, transparent), radial-gradient(2px 2px at 380px 300px, #9ff6ff, transparent); background-size: 480px 420px; opacity: 0.85; animation: hlDrift 60s linear infinite, hlTwinkle 3s 1.2s ease-in-out infinite; }
+.hl-star { position: absolute; right: -14vmax; bottom: -22vmax; width: 70vmax; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #fffaf0 0%, #fff1c2 8%, #ffc864 18%, rgba(255, 120, 60, 0.45) 34%, rgba(160, 60, 120, 0.18) 52%, transparent 70%); filter: saturate(0.9); animation: hlStarIn 2.2s cubic-bezier(.2, .8, .2, 1) both, hlPulse 6s 2.2s ease-in-out infinite; }
+.hl-star::after { content: ""; position: absolute; inset: 22%; border-radius: 50%; background: conic-gradient(from 210deg, transparent 0 40%, rgba(255, 90, 122, 0.55) 42%, transparent 45% 100%); -webkit-mask: radial-gradient(circle, transparent 30%, #000 31%, transparent 60%); mask: radial-gradient(circle, transparent 30%, #000 31%, transparent 60%); animation: hlSpin 40s linear infinite; }
+.hl-beam { position: absolute; left: 84%; top: -10%; bottom: 0; width: 2px; background: linear-gradient(180deg, transparent, rgba(255, 244, 207, 0.9) 30%, rgba(255, 244, 207, 0.4) 70%, transparent); box-shadow: 0 0 18px 4px rgba(255, 220, 150, 0.35); opacity: 0.55; animation: hlBeam 1.4s 0.6s ease-out both, hlFlicker 5s 2s ease-in-out infinite; }
+.hl-embers i { position: absolute; bottom: -12px; width: var(--z); height: var(--z); border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); opacity: 0; animation: hlEmber var(--d) var(--w) linear infinite; }
+.hl-scan { position: absolute; inset: 0; background: repeating-linear-gradient(180deg, rgba(160, 230, 255, 0.035) 0 1px, transparent 1px 4px); -webkit-mask: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); mask: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); }
+@keyframes hlDrift { to { transform: translate3d(-220px, 120px, 0); } }
+@keyframes hlTwinkle { 50% { opacity: 0.35; } }
+@keyframes hlStarIn { from { transform: translate3d(0, 18%, 0) scale(0.8); opacity: 0; } }
+@keyframes hlPulse { 50% { transform: scale(1.03); filter: saturate(1.1) brightness(1.06); } }
+@keyframes hlSpin { to { transform: rotate(360deg); } }
+@keyframes hlBeam { from { transform: scaleY(0); transform-origin: top; opacity: 0; } }
+@keyframes hlFlicker { 0%, 100% { opacity: 0.55; } 47% { opacity: 0.55; } 50% { opacity: 0.25; } 53% { opacity: 0.7; } }
+@keyframes hlEmber { 0% { transform: translate3d(0, 0, 0); opacity: 0; } 10% { opacity: 0.9; } 80% { opacity: 0.6; } 100% { transform: translate3d(var(--x), -92vh, 0); opacity: 0; } }
+
+/* Emblema: el sol roto */
+.hl-emb { display: block; width: 100%; height: 100%; overflow: visible; }
+.hl-emb .hl-glow { transform-origin: 50% 50%; animation: hlGlow 4s ease-in-out infinite; }
+.hl-emb .hl-ring { transform-box: view-box; transform-origin: 50% 50%; transform: rotate(-62deg); }
+.hl-emb .hl-ring2 { transform-origin: 50% 50%; animation: hlSpin 30s linear infinite reverse; }
+.hl-emb .hl-crack { filter: drop-shadow(0 0 2px #ff5a7a); animation: hlCrackGlow 2.6s ease-in-out infinite; }
+.hl-emb .hl-half.a { animation: hlSplitA 6s ease-in-out infinite; }
+.hl-emb .hl-half.b { animation: hlSplitB 6s ease-in-out infinite; }
+.hl-emb .hl-shards path { transform-box: fill-box; transform-origin: center; animation: hlShard 5s ease-in-out infinite; }
+.hl-emb .hl-shards .s2 { animation-delay: -1.6s; } .hl-emb .hl-shards .s3 { animation-delay: -3.1s; }
+@keyframes hlGlow { 50% { transform: scale(1.06); opacity: 0.85; } }
+@keyframes hlCrackGlow { 50% { stroke: #fff1c2; filter: drop-shadow(0 0 4px #ff8a3d); } }
+@keyframes hlSplitA { 50% { transform: translate(-0.8px, -0.8px); } }
+@keyframes hlSplitB { 50% { transform: translate(0.8px, 0.8px); } }
+@keyframes hlShard { 50% { transform: translate(2px, -3px) rotate(40deg); opacity: 0.6; } }
+
+/* Logotipo HELIOS: la O es el sol roto */
+.hlogo { --s: 64px; filter: drop-shadow(0 0 16px rgba(255, 190, 90, 0.3)) drop-shadow(0 3px 0 rgba(0, 0, 0, 0.45)); display: inline-flex; align-items: center; font: 900 var(--s)/1 'Orbitron', 'Sora', sans-serif; letter-spacing: 0.08em; white-space: nowrap; }
+.hlogo .hl-l { display: inline-block; background: linear-gradient(180deg, #ffffff 0%, #fff1c2 45%, #ffc864 70%, #ff8a3d 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hlogo .hl-o { display: inline-block; width: 1.12em; height: 1.12em; margin: -0.06em 0.04em -0.06em -0.04em; }
+/* Entrada: el anillo se dibuja, el núcleo se enciende, se agrieta con un destello y las letras aparecen escaneadas */
+.hlogo .hl-l { animation: hlLetter 0.9s calc(0.9s + var(--i) * 0.09s) cubic-bezier(.16, 1, .3, 1) both; }
+.hlogo .hl-o .hl-ring { animation: hlRingDraw 1.2s 0.15s cubic-bezier(.65, 0, .35, 1) both, hlRingSpin 24s 1.4s linear infinite; }
+.hlogo .hl-o .hl-core { transform-origin: 50px 50px; animation: hlIgnite 0.8s 0.55s cubic-bezier(.2, 1.4, .4, 1) both; }
+.hlogo .hl-o .hl-crack { stroke-dasharray: 70; stroke-dashoffset: 70; animation: hlCrack 0.35s 1.15s ease-out forwards, hlCrackGlow 2.6s 1.6s ease-in-out infinite; }
+.hlogo .hl-o .hl-glow { animation: hlFlash 0.9s 1.15s ease-out both, hlGlow 4s 2s ease-in-out infinite; }
+.hlogo .hl-o .hl-shards { transform-origin: 50px 50px; animation: hlShardsIn 0.7s 1.25s ease-out both; }
+.hlogo.late, .hlogo.late * { animation-play-state: paused !important; }
+.hlogo.late { visibility: hidden; }
+@keyframes hlLetter { 0% { opacity: 0; clip-path: inset(100% 0 0 0); transform: translate3d(0, 0.12em, 0); } 40% { opacity: 1; } 55% { opacity: 0.4; } 62% { opacity: 1; } 100% { opacity: 1; clip-path: inset(0 0 0 0); transform: none; } }
+@keyframes hlRingDraw { from { stroke-dasharray: 0 270; } to { stroke-dasharray: 232 38; } }
+@keyframes hlRingSpin { from { transform: rotate(-62deg); } to { transform: rotate(298deg); } }
+@keyframes hlIgnite { 0% { transform: scale(0); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; } }
+@keyframes hlCrack { to { stroke-dashoffset: 0; } }
+@keyframes hlFlash { 0% { transform: scale(0.6); opacity: 0; } 25% { transform: scale(1.5); opacity: 1; } 100% { transform: none; opacity: 1; } }
+@keyframes hlShardsIn { from { opacity: 0; transform: scale(0.4); } }
+.hl-tagline { margin: 4px 0 14px; font: 500 clamp(13px, 1.4vw, 16px)/1.4 'Orbitron', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #9ff6ff; text-shadow: 0 0 12px rgba(79, 216, 255, 0.45); animation: crFade 0.9s 1.7s cubic-bezier(.16, 1, .3, 1) both; }
+.hero h1.hlh1 { margin: 18px 0 6px; line-height: 1; }
+.hero .hlogo { --s: clamp(44px, 7vw, 96px); }
+.hl .hero .typed { color: #dbe6ff; }
+.hl .hero .pill { background: rgba(10, 16, 34, 0.55); border-color: rgba(130, 210, 255, 0.28); color: #dbe6ff; }
+
+/* Títulos y tarjetas con aspecto de interfaz de la estación */
+.hl h2 { font: 700 clamp(26px, 3.6vw, 44px)/1.15 'Orbitron', 'Sora', sans-serif; letter-spacing: 0.02em; text-transform: none; }
+.hl .kicker { font: 600 12.5px 'Orbitron', monospace; letter-spacing: 0.3em; color: #4fd8ff; }
+.hl .kicker::before { content: "//"; color: #ffc864; letter-spacing: 0; margin-right: 2px; }
+.hl .stat b { font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0; }
+.hl .feats .glowcard, .hl .stat, .hl .hl-step, .hl .cta { position: relative; background: linear-gradient(180deg, rgba(120, 200, 255, 0.07), rgba(120, 200, 255, 0.015)); border: 1px solid rgba(130, 210, 255, 0.16); }
+.hl .feats .glowcard::before, .hl .hl-step::before { content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none; background: linear-gradient(#4fd8ff, #4fd8ff) 0 0 / 14px 2px no-repeat, linear-gradient(#4fd8ff, #4fd8ff) 0 0 / 2px 14px no-repeat, linear-gradient(#ffc864, #ffc864) 100% 100% / 14px 2px no-repeat, linear-gradient(#ffc864, #ffc864) 100% 100% / 2px 14px no-repeat; opacity: 0.8; }
+.hl .feats h4, .hl .hl-step h4 { color: #fff1c2; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em; }
+.hl .cta { background: radial-gradient(circle at 15% 0%, rgba(79, 216, 255, 0.18), transparent 55%), radial-gradient(circle at 90% 100%, rgba(255, 179, 71, 0.18), transparent 55%), #0b0e1b; }
+.hl section + section { background-image: linear-gradient(90deg, transparent, rgba(79, 216, 255, 0.25), transparent); background-size: 70% 1px; background-repeat: no-repeat; background-position: 50% 0; }
+.hl .btn.main { background: linear-gradient(120deg, #ffc864, #ff8a3d 55%, #ff5a7a); color: #1a0a06; }
+.hl .hero .glow { background: radial-gradient(circle, rgba(79, 216, 255, 0.4), transparent 65%); }
+.hl .tag { border-color: rgba(130, 210, 255, 0.25); }
+
+/* Frecuencias de plasma */
+.hl-freqs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.hl-freq { display: inline-flex; align-items: center; gap: 9px; padding: 8px 16px 8px 12px; border-radius: 999px; font: 700 13px 'Orbitron', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid; }
+.hl-freq i { width: 10px; height: 10px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; animation: hlTwinkle 1.8s ease-in-out infinite; }
+.hl-freq.ion { color: #4fd8ff; border-color: rgba(79, 216, 255, 0.4); background: rgba(79, 216, 255, 0.08); }
+.hl-freq.fus { color: #ffb347; border-color: rgba(255, 179, 71, 0.4); background: rgba(255, 179, 71, 0.08); }
+.hl-freq.vac { color: #b39bff; border-color: rgba(179, 155, 255, 0.4); background: rgba(179, 155, 255, 0.08); }
+.hl-freq.fus i { animation-delay: 0.6s; } .hl-freq.vac i { animation-delay: 1.2s; }
+
+/* Historia */
+.hl-story { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+.hl-step { padding: 26px 24px; border-radius: var(--radius); }
+.hl-step p { margin: 0; color: var(--mut); font-size: 15px; }
+.hl-num { font: 900 34px/1 'Orbitron', sans-serif; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hl-quote { display: flex; align-items: center; gap: 22px; margin: 34px 0 0; padding: 26px 30px; border-left: 3px solid #ff5a7a; background: linear-gradient(90deg, rgba(255, 90, 122, 0.1), transparent); border-radius: 0 18px 18px 0; }
+.hl-quote p { margin: 0; font: 500 clamp(17px, 2vw, 21px)/1.5 var(--head); font-style: italic; color: #fde9ee; }
+.hl-emb.small { flex: none; width: 64px; height: 64px; }
+.hl-tech { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.hl-big { justify-self: center; width: min(320px, 70vw); aspect-ratio: 1; filter: drop-shadow(0 0 40px rgba(255, 180, 80, 0.25)); }
+.hl-big .hl-ring { animation: hlRingSpin 24s linear infinite; }
+
+/* Capturas horizontales */
+.shots.land img { width: clamp(300px, 48vw, 600px); aspect-ratio: 20 / 9; border-radius: 18px; }
+.hl .shots img { border: 1px solid rgba(130, 210, 255, 0.25); }
+
+/* Mini logotipo en la portada */
+.show-txt h3.hlh3 { line-height: 1; margin: 6px 0 4px; }
+.show-txt .hlogo { --s: clamp(34px, 4.4vw, 54px); }
+
+@media (max-width: 900px) {
+  .hl-story { grid-template-columns: 1fr; }
+  .hl-tech { grid-template-columns: 1fr; }
+  .hl-big { width: min(220px, 60vw); }
+}
+@media (max-width: 700px) {
+  .hero .hlogo { --s: clamp(36px, 11.5vw, 56px); }
+  .hl-quote { flex-direction: column; align-items: flex-start; }
+  .hl-tagline { font-size: 11.5px; letter-spacing: 0.1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hl-space *, .hl-emb *, .hlogo, .hlogo *, .hl-tagline, .hl-freq i { animation: none !important; }
+  .hlogo .hl-o .hl-crack { stroke-dashoffset: 0; }
+  .hlogo.late { visibility: visible; }
+}

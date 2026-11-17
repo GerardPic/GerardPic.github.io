@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helios · Gerard</title>
+<meta name="description" content="Helios: a first-person sci-fi shooter for mobile made with Godot. Every weapon fires plasma and you can absorb enemy plasma and send it back.">
+<meta name="theme-color" content="#05060d">
+<meta property="og:title" content="Helios">
+<meta property="og:description" content="The star broke. You haven’t yet.">
+<meta property="og:image" content="https://gerardpic.dev/img/hr-1-casco.jpg">
+<link rel="icon" href="../../img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="../../img/logo-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@500;700;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../estilo.css">
+<link rel="alternate" hreflang="es" href="https://gerardpic.dev/helios/">
+<link rel="alternate" hreflang="en" href="https://gerardpic.dev/en/helios/">
+</head>
+<body class="hl">
+<div class="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="logo"><img src="../../img/logo.svg" alt="" width="36" height="36"></span><span class="name">Gerard</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#capturas">Screenshots</a>
+      <a href="#juego">The game</a>
+      <a href="#historia">Story</a>
+      <a href="../" class="opt">Home</a>
+      <a class="lang" href="../../helios/" hreflang="es" lang="es" title="Español">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Helios">
+    <div class="hl-space" aria-hidden="true">
+      <div class="hl-stars s1"></div><div class="hl-stars s2"></div><div class="hl-stars s3"></div>
+      <div class="hl-star"></div><div class="hl-beam"></div>
+      <div class="hl-embers"><i style="left:43%;--d:14.6s;--w:-3.6s;--x:-34px;--z:2.2px;--c:#ffc864"></i><i style="left:48%;--d:11.7s;--w:-0.5s;--x:-13px;--z:2.1px;--c:#9ff6ff"></i><i style="left:55%;--d:7.6s;--w:-5.5s;--x:14px;--z:2.2px;--c:#ffc864"></i><i style="left:30%;--d:12.0s;--w:-2.5s;--x:-33px;--z:3.7px;--c:#9ff6ff"></i><i style="left:8%;--d:14.8s;--w:-5.7s;--x:-23px;--z:2.9px;--c:#ffd98a"></i><i style="left:71%;--d:7.9s;--w:-4.1s;--x:-17px;--z:2.3px;--c:#ffd98a"></i><i style="left:49%;--d:7.8s;--w:-1.7s;--x:32px;--z:2.2px;--c:#ffd98a"></i><i style="left:65%;--d:12.4s;--w:-3.4s;--x:0px;--z:3.4px;--c:#9ff6ff"></i><i style="left:48%;--d:9.4s;--w:-1.2s;--x:-9px;--z:2.2px;--c:#ff8a3d"></i><i style="left:69%;--d:11.0s;--w:-3.9s;--x:17px;--z:2.9px;--c:#ffc864"></i><i style="left:17%;--d:11.1s;--w:-5.0s;--x:3px;--z:2.5px;--c:#9ff6ff"></i><i style="left:55%;--d:7.3s;--w:-2.0s;--x:31px;--z:3.7px;--c:#ff8a3d"></i><i style="left:45%;--d:12.6s;--w:-2.4s;--x:34px;--z:4.4px;--c:#ffc864"></i><i style="left:13%;--d:14.6s;--w:-3.2s;--x:-32px;--z:2.2px;--c:#ff8a3d"></i><i style="left:84%;--d:11.6s;--w:-1.9s;--x:17px;--z:2.9px;--c:#9ff6ff"></i><i style="left:87%;--d:9.8s;--w:-0.4s;--x:5px;--z:2.5px;--c:#ffc864"></i><i style="left:65%;--d:7.5s;--w:-1.4s;--x:-24px;--z:4.2px;--c:#9ff6ff"></i><i style="left:52%;--d:14.3s;--w:-3.0s;--x:-19px;--z:3.3px;--c:#ff8a3d"></i><i style="left:19%;--d:13.6s;--w:-0.8s;--x:-5px;--z:4.1px;--c:#ff8a3d"></i><i style="left:89%;--d:14.1s;--w:-0.3s;--x:-21px;--z:2.2px;--c:#ffd98a"></i><i style="left:31%;--d:12.3s;--w:-5.9s;--x:35px;--z:2.5px;--c:#ff8a3d"></i><i style="left:2%;--d:8.2s;--w:-2.8s;--x:38px;--z:3.7px;--c:#ffd98a"></i></div>
+      <div class="hl-scan"></div>
+    </div>
+    <div class="wrap hero-in">
+      <div>
+        <span class="pill"><span class="live"></span>In development · Godot 4</span>
+        <h1 class="hlh1"><span class="sr">Helios</span><span class="hlogo late " aria-hidden="true"><span class="hl-l" style="--i:0">H</span><span class="hl-l" style="--i:1">E</span><span class="hl-l" style="--i:2">L</span><span class="hl-l" style="--i:3">I</span><span class="hl-o" style="--i:4"><svg class="hl-emb" viewBox="0 0 100 100" aria-hidden="true"><defs>
+<radialGradient id="hlAc" cx="44%" cy="40%" r="62%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#fff4cf"/><stop offset=".75" stop-color="#ffc864"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient>
+<radialGradient id="hlAg"><stop offset="0" stop-color="#ffd27a" stop-opacity=".85"/><stop offset=".45" stop-color="#ff9a4a" stop-opacity=".28"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/></radialGradient>
+<linearGradient id="hlAr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ff6ff"/><stop offset=".5" stop-color="#4fd8ff"/><stop offset="1" stop-color="#8f7bff"/></linearGradient>
+<clipPath id="hlAa"><path d="M0 0 H100 V8 L67 31 L58 39 L51 49 L45 59 L35 69 L0 100 Z"/></clipPath>
+<clipPath id="hlAb"><path d="M100 0 V100 H0 L35 69 L45 59 L51 49 L58 39 L67 31 L100 8 Z"/></clipPath>
+</defs>
+<circle class="hl-glow" cx="50" cy="50" r="49" fill="url(#hlAg)"/>
+<circle class="hl-ring" cx="50" cy="50" r="43" fill="none" stroke="url(#hlAr)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="232 38"/>
+<circle class="hl-ring2" cx="50" cy="50" r="37.5" fill="none" stroke="#9ff6ff" stroke-opacity=".35" stroke-width=".8" stroke-dasharray="3 5"/>
+<g class="hl-core">
+<circle class="hl-half a" cx="50" cy="50" r="25" fill="url(#hlAc)" clip-path="url(#hlAa)"/>
+<circle class="hl-half b" cx="50" cy="50" r="25" fill="url(#hlAc)" clip-path="url(#hlAb)"/>
+<path class="hl-crack" d="M67 31 L58 39 L51 49 L45 59 L35 69" fill="none" stroke="#ff5a7a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="hl-shards" fill="#fff1c2"><path class="s1" d="M76 20 l5 -3 l-1 6 z"/><path class="s2" d="M22 82 l-5 2 l3 -5 z"/><path class="s3" d="M82 30 l4 1 l-3 3 z"/></g>
+</svg></span><span class="hl-l" style="--i:5">S</span></span></h1>
+        <p class="hl-tagline">The star broke. You haven’t yet.</p>
+        <p class="typed" data-typed='["Absorb enemy plasma and fire it back.", "Living plasma giants that sing as they fight.", "An 88-metre drop in zero gravity.", "No ammo: only heat."]'><b></b><span class="caret"></span></p>
+        <div class="btns">
+          <a class="btn main magnet" href="#capturas">See screenshots</a>
+          <a class="btn" href="#historia">The story</a>
+        </div>
+      </div>
+      <div class="hero-card land-card" data-tilt>
+        <div class="glow"></div>
+        <div class="phone land" data-slides><div class="screen"><img src="../../img/hr-1-casco.jpg" loading="lazy" alt="Helios: plasma giants on the station’s outer hull" width="1600" height="720" decoding="async"><img data-src="../../img/hr-2-hangar.jpg" alt="Helios: enemies waiting in the hangar" width="1600" height="720" decoding="async"><img data-src="../../img/hr-3-control.jpg" alt="Helios: the control room and the column of light" width="1600" height="720" decoding="async"><img data-src="../../img/hr-4-ciudad.jpg" alt="Helios: the station city at night" width="1600" height="720" decoding="async"><img data-src="../../img/hr-5-reactor.jpg" alt="Helios: rusty corridors next to the reactor" width="1600" height="720" decoding="async"></div></div>
+          <div class="dots" aria-label="Screenshots"></div>
+        <div class="chip c1"><span>🎯</span>First person</div>
+        <div class="chip c2"><span>🪐</span>Zero gravity</div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <section id="capturas">
+    <div class="wrap">
+      <span class="kicker reveal">Screenshots</span>
+      <h2 class="reveal" style="--d:.05s">A dead station next to a wounded star</h2>
+      <p class="lead reveal" style="--d:.1s">First mission, “Dead Light”: from the outer hull down to the reactor shaft. Swipe to see more.</p>
+      <div class="shots land reveal" style="--d:.15s"><img src="../../img/hr-1-casco.jpg" alt="Plasma giants on the station’s outer hull" loading="lazy" width="1600" height="720"><img src="../../img/hr-6-gigante.jpg" alt="A Bramido in the dead hangar" loading="lazy" width="1600" height="720"><img src="../../img/hr-2-hangar.jpg" alt="Enemies waiting in the hangar" loading="lazy" width="1600" height="720"><img src="../../img/hr-3-control.jpg" alt="The control room and the column of light" loading="lazy" width="1600" height="720"><img src="../../img/hr-8-atrio.jpg" alt="The solar atrium" loading="lazy" width="1600" height="720"><img src="../../img/hr-4-ciudad.jpg" alt="The station city at night" loading="lazy" width="1600" height="720"><img src="../../img/hr-7-anillo.jpg" alt="The reactor ring" loading="lazy" width="1600" height="720"><img src="../../img/hr-5-reactor.jpg" alt="Rusty corridors next to the reactor" loading="lazy" width="1600" height="720"></div>
+    </div>
+  </section>
+
+  <section id="juego">
+    <div class="wrap">
+      <span class="kicker reveal">The game</span>
+      <h2 class="reveal" style="--d:.05s">Swallow the fire of a star</h2>
+      <div class="hl-freqs reveal" style="--d:.1s"><span class="hl-freq ion"><i></i>Ion</span><span class="hl-freq fus"><i></i>Fusion</span><span class="hl-freq vac"><i></i>Void</span></div>
+      <div class="stats" style="margin:30px 0 18px"><div class="stat reveal" style="--d:0.00s"><b class="grad-text" data-count="3">0</b><span>plasma frequencies</span></div><div class="stat reveal" style="--d:0.08s"><b class="grad-text" data-count="9">0</b><span>zones in the first mission</span></div><div class="stat reveal" style="--d:0.16s"><b class="grad-text" data-count="88" data-suffix=" m">0</b><span>zero-gravity drop</span></div><div class="stat reveal" style="--d:0.24s"><b class="grad-text" data-count="30" data-suffix=" fps">0</b><span>steady on a real phone</span></div></div>
+      <div class="feats"><div class="glowcard reveal" style="--d:0.00s"><div class="ic">🖐️</div><h4>The Ember Palm</h4><p>Block at the right moment and the enemy shot becomes your energy: defence, healing and ability charge at once.</p></div><div class="glowcard reveal" style="--d:0.06s"><div class="ic">🔥</div><h4>Heat, not ammo</h4><p>The Fénix-7 rifle overheats instead of running dry. Vent it in time… or use the heat to stop the machines.</p></div><div class="glowcard reveal" style="--d:0.12s"><div class="ic">🌈</div><h4>Three frequencies</h4><p>Ion, Fusion and Void. Each enemy gives way to one frequency, so you switch weapons with purpose.</p></div><div class="glowcard reveal" style="--d:0.18s"><div class="ic">🔆</div><h4>Plasma giants</h4><p>Ascua, Escoria and Corista: Burning Ones up to 3.5 metres tall, born from a wounded star. You read them by colour.</p></div><div class="glowcard reveal" style="--d:0.24s"><div class="ic">🪐</div><h4>Zero gravity</h4><p>Descend 88 m down the reactor shaft jumping between anchors, dodging spinning collector arms and plasma columns.</p></div><div class="glowcard reveal" style="--d:0.30s"><div class="ic">⚔️</div><h4>Three sides</h4><p>The Choir and the Halcyon corporation also fight each other. Provoke their clashes and take advantage.</p></div></div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="wrap">
+      <span class="kicker reveal">Story</span>
+      <h2 class="reveal" style="--d:.05s">Year 2487. The stars are alive.</h2>
+      <div class="hl-story"><div class="hl-step reveal" style="--d:0.0s"><span class="hl-num">01</span><h4>The Blackout</h4><p>The Halcyon corporation tried to tame Helios, the star of the Tyr-Kael system. Helios answered: a plasma ejection wiped out the Nueva Aurora colony in eleven minutes.</p></div><div class="hl-step reveal" style="--d:0.1s"><span class="hl-num">02</span><h4>The Choir</h4><p>From the wounded corona came the Burning Ones, giants of living plasma. Halcyon blamed the Choir and erased every trace of its experiment.</p></div><div class="hl-step reveal" style="--d:0.2s"><span class="hl-num">03</span><h4>Teo “Ash” Varga</h4><p>He survived at nine, but a shard of living plasma lodged next to his heart: the Ember. Today he is the only soldier able to absorb the fire of a star.</p></div></div>
+      <blockquote class="hl-quote reveal"><svg class="hl-emb small" viewBox="0 0 100 100" aria-hidden="true"><defs>
+<radialGradient id="hlQc" cx="44%" cy="40%" r="62%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#fff4cf"/><stop offset=".75" stop-color="#ffc864"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient>
+<radialGradient id="hlQg"><stop offset="0" stop-color="#ffd27a" stop-opacity=".85"/><stop offset=".45" stop-color="#ff9a4a" stop-opacity=".28"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/></radialGradient>
+<linearGradient id="hlQr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ff6ff"/><stop offset=".5" stop-color="#4fd8ff"/><stop offset="1" stop-color="#8f7bff"/></linearGradient>
+<clipPath id="hlQa"><path d="M0 0 H100 V8 L67 31 L58 39 L51 49 L45 59 L35 69 L0 100 Z"/></clipPath>
+<clipPath id="hlQb"><path d="M100 0 V100 H0 L35 69 L45 59 L51 49 L58 39 L67 31 L100 8 Z"/></clipPath>
+</defs>
+<circle class="hl-glow" cx="50" cy="50" r="49" fill="url(#hlQg)"/>
+<circle class="hl-ring" cx="50" cy="50" r="43" fill="none" stroke="url(#hlQr)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="232 38"/>
+<circle class="hl-ring2" cx="50" cy="50" r="37.5" fill="none" stroke="#9ff6ff" stroke-opacity=".35" stroke-width=".8" stroke-dasharray="3 5"/>
+<g class="hl-core">
+<circle class="hl-half a" cx="50" cy="50" r="25" fill="url(#hlQc)" clip-path="url(#hlQa)"/>
+<circle class="hl-half b" cx="50" cy="50" r="25" fill="url(#hlQc)" clip-path="url(#hlQb)"/>
+<path class="hl-crack" d="M67 31 L58 39 L51 49 L45 59 L35 69" fill="none" stroke="#ff5a7a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="hl-shards" fill="#fff1c2"><path class="s1" d="M76 20 l5 -3 l-1 6 z"/><path class="s2" d="M22 82 l-5 2 l3 -5 z"/><path class="s3" d="M82 30 l4 1 l-3 3 z"/></g>
+</svg><p>At night, the Ember whispers to him in a language he doesn’t understand. He has never reported it.</p></blockquote>
+    </div>
+  </section>
+
+  <section id="tecnica">
+    <div class="wrap hl-tech">
+      <div>
+        <span class="kicker reveal">How it’s made</span>
+        <h2 class="reveal" style="--d:.05s">Handmade, measured on the phone</h2>
+        <p class="lead reveal" style="--d:.1s">Godot 4.7 with GDScript, Jolt physics, a modular level kit built in Blender, scanned materials per zone and dynamic resolution to keep 30 fps on a mid-range phone. Touch controls designed from day one.</p>
+        <div class="tags reveal" style="--d:.15s"><span class="tag">Godot 4.7</span><span class="tag">GDScript</span><span class="tag">Blender</span><span class="tag">Jolt Physics</span><span class="tag">Android</span><span class="tag">ambientCG</span></div>
+      </div>
+      <div class="hl-big reveal" style="--d:.1s"><svg class="hl-emb big" viewBox="0 0 100 100" aria-hidden="true"><defs>
+<radialGradient id="hlBc" cx="44%" cy="40%" r="62%"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#fff4cf"/><stop offset=".75" stop-color="#ffc864"/><stop offset="1" stop-color="#ff8a3d"/></radialGradient>
+<radialGradient id="hlBg"><stop offset="0" stop-color="#ffd27a" stop-opacity=".85"/><stop offset=".45" stop-color="#ff9a4a" stop-opacity=".28"/><stop offset="1" stop-color="#ff7a3d" stop-opacity="0"/></radialGradient>
+<linearGradient id="hlBr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ff6ff"/><stop offset=".5" stop-color="#4fd8ff"/><stop offset="1" stop-color="#8f7bff"/></linearGradient>
+<clipPath id="hlBa"><path d="M0 0 H100 V8 L67 31 L58 39 L51 49 L45 59 L35 69 L0 100 Z"/></clipPath>
+<clipPath id="hlBb"><path d="M100 0 V100 H0 L35 69 L45 59 L51 49 L58 39 L67 31 L100 8 Z"/></clipPath>
+</defs>
+<circle class="hl-glow" cx="50" cy="50" r="49" fill="url(#hlBg)"/>
+<circle class="hl-ring" cx="50" cy="50" r="43" fill="none" stroke="url(#hlBr)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="232 38"/>
+<circle class="hl-ring2" cx="50" cy="50" r="37.5" fill="none" stroke="#9ff6ff" stroke-opacity=".35" stroke-width=".8" stroke-dasharray="3 5"/>
+<g class="hl-core">
+<circle class="hl-half a" cx="50" cy="50" r="25" fill="url(#hlBc)" clip-path="url(#hlBa)"/>
+<circle class="hl-half b" cx="50" cy="50" r="25" fill="url(#hlBc)" clip-path="url(#hlBb)"/>
+<path class="hl-crack" d="M67 31 L58 39 L51 49 L45 59 L35 69" fill="none" stroke="#ff5a7a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<g class="hl-shards" fill="#fff1c2"><path class="s1" d="M76 20 l5 -3 l-1 6 z"/><path class="s2" d="M22 82 l-5 2 l3 -5 z"/><path class="s3" d="M82 30 l4 1 l-3 3 z"/></g>
+</svg></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="kicker">In development</span>
+        <h2>Want to know more?</h2>
+        <p>Helios is in active development. If you’re interested in the project or want to collaborate, get in touch.</p>
+        <div class="btns">
+          <a class="btn main" href="../#contacto">Let’s talk</a>
+          <a class="btn" href="../">Back to home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Gerard · GerardPic</span>
+    <span><a href="../">Home</a> · <a href="../privacy.html">Privacy policy</a></span>
+  </div>
+</footer>
+<script src="../../efectos.js" defer></script>
+</body>
+</html>

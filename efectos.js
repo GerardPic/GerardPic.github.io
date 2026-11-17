@@ -194,19 +194,21 @@
   // Volver arriba
   $$('.to-top').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }));
 
-  // Logo de Cowboy Runner: empieza cuando ya cargó su letra (Rye), para que no cambie de forma ni salte
-  // a mitad de la animación; fuera de la cabecera espera además a que se vea
-  const crs = $$('.crl');
-  if (crs.length) {
+  // Logos animados de los juegos (Cowboy Runner con Rye, Helios con Orbitron): empiezan cuando ya cargó
+  // su letra, para que no cambien de forma ni salten a mitad de la animación; fuera de la cabecera
+  // esperan además a que se vean
+  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron']].forEach(([sel, face]) => {
+    const els = $$(sel);
+    if (!els.length) return;
     const go = (el) => el.classList.remove('late');
-    const font = document.fonts && document.fonts.load ? document.fonts.load('400 1em Rye').catch(() => {}) : Promise.resolve();
+    const font = document.fonts && document.fonts.load ? document.fonts.load(face).catch(() => {}) : Promise.resolve();
     Promise.race([font, new Promise((r) => setTimeout(r, 2500))]).then(() => requestAnimationFrame(() => {
       const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => {
         if (e.isIntersecting) { go(e.target); io.unobserve(e.target); }
       }), { threshold: 0.35 }) : null;
-      crs.forEach((el) => (el.closest('.hero') || !io ? go(el) : io.observe(el)));
+      els.forEach((el) => (el.closest('.hero') || !io ? go(el) : io.observe(el)));
     }));
-  }
+  });
 
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
