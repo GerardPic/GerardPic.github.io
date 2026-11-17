@@ -796,9 +796,35 @@ body.ps ::selection { background: #bfef2b; color: #121312; }
   .ps-route .line { stroke-dashoffset: 0; }
   .pslogo.late { visibility: visible; }
 }
-.showcase.rev.ps-first { margin-top: 34px; }
-.ps-first + .showcase { margin-top: 110px; }
-@media (max-width: 900px) { .ps-first + .showcase { margin-top: 80px; } }
+/* Cada proyecto de la portada es un bloque propio; en el celular se ve como un panel con el color de su marca */
+.proj { position: relative; margin-top: 34px; }
+.proj + .proj { margin-top: 110px; }
+.proj > .showcase, .proj > .showcase.rev { margin-top: 0; margin-bottom: 0; }
+.proj > .bento { margin-top: 48px; }
+.proj-ps { --pc: #bfef2b; --pc-bg: rgba(191, 239, 43, 0.1); --pc-line: rgba(140, 180, 20, 0.35); }
+.proj-cr { --pc: #ff7a2f; --pc-bg: rgba(255, 122, 47, 0.1); --pc-line: rgba(255, 122, 47, 0.32); }
+.proj-hl { --pc: #4fd8ff; --pc-bg: rgba(79, 216, 255, 0.1); --pc-line: rgba(40, 170, 220, 0.32); }
+@media (max-width: 900px) {
+  .proj { padding: 30px 18px 32px; border-radius: 30px; border: 1px solid var(--pc-line); background: linear-gradient(180deg, var(--pc-bg), transparent 55%), var(--card); box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.45); }
+  .proj::before { content: ""; position: absolute; top: -1px; left: 28px; right: 28px; height: 4px; border-radius: 0 0 6px 6px; background: var(--pc); }
+  .proj + .proj { margin-top: 40px; }
+  .proj > .bento { margin-top: 30px; }
+  .proj .hero-card .phone.land { width: 100%; }
+  .proj > .showcase > * { min-width: 0; }
+  /* En el celular: primero la etiqueta y el logo del proyecto, después el teléfono y al final el resto del texto */
+  .proj > .showcase { display: flex; flex-direction: column; align-items: stretch; gap: 14px; }
+  .proj > .showcase > .show-txt { display: contents; }
+  .proj .show-txt > * { order: 3; align-self: flex-start; }
+  .proj .show-txt > .tag { order: 0; }
+  .proj .show-txt > h3 { order: 1; }
+  .proj > .showcase > .hero-card { order: 2; align-self: stretch; margin: 18px 0 26px; }
+  .proj > .showcase > .land-card { margin-top: 40px; }
+  /* Centrado solo en el celular */
+  .proj .show-txt > * { align-self: center; }
+  .proj .show-txt > p { text-align: center; }
+  .proj .show-txt > .ticks { max-width: 34em; }
+  .proj .show-txt > .tags, .proj .show-txt > .btns { justify-content: center; }
+}
 /* En modo claro el logo de la portada va sobre su fondo oscuro de marca, para que el verde lima se lea */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) .show-txt .pslogo { padding: 0.32em 0.5em; border-radius: 14px; background: #161817; filter: none; }
