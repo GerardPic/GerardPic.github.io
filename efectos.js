@@ -112,16 +112,33 @@
       imgs.forEach((im, j) => im.classList.toggle('on', j === i));
       if (dots) [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i));
     };
-    const restart = () => { clearInterval(tm); if (!reduce) tm = setInterval(() => show(i + 1), 3600); };
+    // Solo se pasa a una captura que ya terminó de descargarse (si no, se vería vacía o su texto alternativo)
+    const ready = (im) => !im.dataset.src && im.complete && im.naturalWidth > 0;
+    const next = () => { for (let s = 1; s < imgs.length; s++) { const k = (i + s) % imgs.length; if (ready(imgs[k])) { show(k); return; } } };
+    // Las animaciones de capturas (data-every) avanzan más rápido que los carruseles normales
+    const every = +box.dataset.every || 3600;
+    const restart = () => { clearInterval(tm); if (!reduce || box.dataset.every) tm = setInterval(next, every); };
     if (dots) imgs.forEach((im, j) => {
       const b = document.createElement('button'); b.type = 'button';
       b.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Screenshot ' : 'Captura ') + (j + 1));
-      b.addEventListener('click', () => { show(j); restart(); }); dots.appendChild(b);
+      b.addEventListener('click', () => {
+        if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; }
+        if (ready(im)) show(j); else im.addEventListener('load', () => show(j), { once: true });
+        restart();
+      }); dots.appendChild(b);
     });
-    // Las demás capturas se cargan cuando la página ya está lista (no frenan la portada)
+    // Las demás capturas solo se descargan cuando el carrusel se acerca a la pantalla,
+    // y el carrusel solo rota mientras se ve (así la página abre rápido y no gasta datos)
     const loadRest = () => imgs.forEach((im) => { if (im.dataset.src) { im.src = im.dataset.src; delete im.dataset.src; } });
-    if (document.readyState === 'complete') loadRest(); else addEventListener('load', loadRest);
-    show(0); restart();
+    show(0);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((es) => es.forEach((e) => {
+        if (e.isIntersecting) {
+          if (document.readyState === 'complete') loadRest(); else addEventListener('load', loadRest, { once: true });
+          restart();
+        } else clearInterval(tm);
+      }), { rootMargin: '300px 0px' }).observe(box);
+    } else { addEventListener('load', loadRest); restart(); }
   });
 
   // Cortina de entrada: se abre cuando la página cargó y ya se dibujó el logo (como mucho a los 2,8 s)
@@ -194,10 +211,10 @@
   // Volver arriba
   $$('.to-top').forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }));
 
-  // Logos animados de los juegos (Cowboy Runner con Rye, Helios con Orbitron): empiezan cuando ya cargó
+  // Logos animados de los proyectos (Cowboy Runner con Rye, Helios con Orbitron, Postal Sounds con Jost): empiezan cuando ya cargó
   // su letra, para que no cambien de forma ni salten a mitad de la animación; fuera de la cabecera
   // esperan además a que se vean
-  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron']].forEach(([sel, face]) => {
+  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron'], ['.pslogo', '700 1em Jost'], ['.smdlogo', '800 1em "Bricolage Grotesque"']].forEach(([sel, face]) => {
     const els = $$(sel);
     if (!els.length) return;
     const go = (el) => el.classList.remove('late');
@@ -209,6 +226,31 @@
       els.forEach((el) => (el.closest('.hero') || !io ? go(el) : io.observe(el)));
     }));
   });
+
+  // Videos del juego: no se descargan hasta que se van a ver; se pausan al salir de pantalla
+  const vids = $$('video[data-src]');
+  if (vids.length) {
+    // Se reproducen solos siempre: silenciados y en línea, como exige Safari en iPhone
+    const load = (v) => {
+      v.muted = true; v.defaultMuted = true; v.playsInline = true;
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', '');
+      if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; v.load(); }
+    };
+    const visible = new Set();
+    const play = (v) => { const r = v.play(); if (r && r.catch) r.catch(() => {}); };
+    vids.forEach((v) => { v.muted = true; v.playsInline = true; v.loop = true; });
+    // Si el móvil bloquea la reproducción automática (iPhone en ahorro de energía), los videos
+    // visibles arrancan con el primer toque en cualquier parte de la página
+    const kick = () => visible.forEach((v) => { load(v); if (v.paused) play(v); });
+    ['touchend', 'click', 'keydown'].forEach((ev) => addEventListener(ev, kick, { passive: true }));
+    if ('IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((es) => es.forEach((e) => {
+        const v = e.target;
+        if (e.isIntersecting) { visible.add(v); load(v); play(v); } else { visible.delete(v); if (!v.paused) v.pause(); }
+      }), { rootMargin: '150px 0px', threshold: 0.2 });
+      vids.forEach((v) => vio.observe(v));
+    } else vids.forEach((v) => { visible.add(v); load(v); play(v); });
+  }
 
   // Año del pie
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
