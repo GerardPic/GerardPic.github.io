@@ -1162,7 +1162,7 @@ body.mg .brand { font-family: Sora, sans-serif; }
 .mg-card .mg-phone { right: 4px; bottom: 6px; width: 120px; }
 .mg-card .chip { background: #fff; color: #461b14; border-color: rgba(70, 27, 20, 0.12); }
 .mg-card .chip.c1 { top: -14px; left: 18px; right: auto; bottom: auto; } .mg-card .chip.c2 { bottom: -14px; left: 40px; top: auto; right: auto; }
-.mg-logo-h { height: 64px; width: auto; display: block; filter: drop-shadow(0 4px 14px rgba(224, 203, 185, 0.35)); }
+.mg-logo-h { height: 72px; width: auto; display: block; margin-left: -10px; filter: drop-shadow(0 0 18px rgba(224, 203, 185, 0.22)); }
 .tag.mgtag { background: linear-gradient(120deg, #e0cbb9, #f1d9d6); color: #461b14; border-color: transparent; }
 @media (max-width: 700px) { .mg-card { padding: 22px 22px 46px 16px; } .mg-card .mg-phone { width: 86px; } .mg-logo-h { height: 46px; } }
 
