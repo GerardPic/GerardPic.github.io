@@ -1167,3 +1167,64 @@ body.mg .brand { font-family: Sora, sans-serif; }
 @media (max-width: 700px) { .mg-card { padding: 22px 22px 46px 16px; } .mg-card .mg-phone { width: 86px; } .mg-logo-h { height: 46px; } }
 
 .proj-mg { --pc: #7d5255; --pc-bg: rgba(241, 217, 214, 0.35); --pc-line: rgba(125, 82, 85, 0.35); }
+
+/* Margaritas: virtudes (carrito → WhatsApp) */
+.mg-flow { display: grid; grid-template-columns: minmax(0, 1fr) 110px minmax(0, 1fr); align-items: center; gap: 10px; margin-top: 34px; }
+.mg-cart { padding: 22px; border-radius: 26px; background: #fff; border: 1px solid rgba(70, 27, 20, 0.12); box-shadow: 0 34px 60px -34px rgba(70, 27, 20, 0.55); }
+.mg-cart-h { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 1px dashed rgba(70, 27, 20, 0.18); }
+.mg-cart-h b { font: italic 500 24px 'Playfair Display', serif; }
+.mg-cart-h span { font: 600 13px Montserrat; padding: 5px 11px; border-radius: 999px; background: #f1d9d6; }
+.mg-cart ul { list-style: none; margin: 0; padding: 6px 0; }
+.mg-cart li { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(70, 27, 20, 0.07); }
+.mg-cart li > i { width: 44px; height: 54px; border-radius: 22px 22px 8px 8px; background: linear-gradient(150deg, #f1d9d6, #e0cbb9); }
+.mg-cart li:nth-child(1) > i { background: radial-gradient(circle at 30% 30%, #6b3a1c 18%, transparent 19%), radial-gradient(circle at 70% 60%, #4a2410 16%, transparent 17%), #c9935a; }
+.mg-cart li:nth-child(2) > i { background: repeating-linear-gradient(90deg, #cdbbe6 0 5px, #b6a1d8 5px 7px); }
+.mg-cart li:nth-child(3) > i { background: radial-gradient(circle, transparent 34%, #7d2a2a 35% 60%, transparent 61%), #f1d9d6; }
+.mg-cart li b { display: block; font: italic 500 17px 'Playfair Display', serif; }
+.mg-cart li span { display: block; font: 500 12.5px Montserrat; color: #7d5255; }
+.mg-cart li small { font: 500 12px Montserrat; color: #a8857c; }
+.mg-cart li em { font: 600 14px Montserrat; font-style: normal; color: #461b14; }
+.mg-cart-f { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+.mg-cart-f span { padding: 10px 12px; border-radius: 12px; border: 1px solid rgba(70, 27, 20, 0.14); font: 500 12.5px Montserrat; color: #a8857c; background: #fbf6f1; }
+.mg-cart-f span:last-child { grid-column: 1 / -1; }
+.mg-cart-t { display: flex; justify-content: space-between; align-items: baseline; margin: 6px 0 14px; }
+.mg-cart-t span { font: 600 12px Montserrat; letter-spacing: 0.2em; text-transform: uppercase; color: #7d5255; }
+.mg-cart-t b { font: 400 30px 'Playfair Display', serif; }
+.mg-cart-b { padding: 15px; border-radius: 999px; text-align: center; background: #461b14; color: #fcfafa; font: 600 14.5px Montserrat; letter-spacing: 0.04em; box-shadow: 0 16px 30px -14px rgba(70, 27, 20, 0.6); animation: mgPulse 2.6s ease-in-out infinite; }
+@keyframes mgPulse { 50% { box-shadow: 0 16px 30px -14px rgba(70, 27, 20, 0.6), 0 0 0 8px rgba(125, 82, 85, 0.12); } }
+.mg-arrow { color: #7d5255; }
+.mg-arrow svg { width: 100%; height: auto; display: block; }
+.mg-arrow path:first-child { animation: mgDash 1.6s linear infinite; }
+@keyframes mgDash { to { stroke-dashoffset: -22; } }
+.mg-chat { border-radius: 26px; overflow: hidden; background: #efe6dd; border: 1px solid rgba(70, 27, 20, 0.12); box-shadow: 0 34px 60px -34px rgba(70, 27, 20, 0.55); }
+.mg-chat-h { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #461b14; color: #fbf6f1; }
+.mg-chat-h .mg-flower.small { width: 34px; height: 34px; padding: 5px; border-radius: 50%; background: #fbf6f1; }
+.mg-chat-h b { font: italic 500 19px 'Playfair Display', serif; }
+.mg-chat-h small { margin-left: auto; font: 500 12px Montserrat; color: #e0cbb9; }
+.mg-bubble { position: relative; margin: 18px; padding: 14px 16px 24px; max-width: 92%; border-radius: 16px 16px 4px 16px; background: #dcf8c6; color: #1f2b1a; font: 400 13.5px/1.5 Montserrat; margin-left: auto; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08); }
+.mg-bubble time { position: absolute; right: 12px; bottom: 6px; font-size: 11px; color: #5a7a52; }
+.mg-note { margin: 16px 0 0; font: italic 400 14px Montserrat; color: #a8857c; text-align: center; }
+.mg-vs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 40px; }
+.mg-v { display: flex; gap: 16px; padding: 20px 22px; border-radius: 22px; background: #fff; border: 1px solid rgba(70, 27, 20, 0.1); transition: transform 0.35s cubic-bezier(.16, 1, .3, 1), box-shadow 0.35s; }
+.mg-v:hover { transform: translateY(-4px); box-shadow: 0 24px 40px -28px rgba(70, 27, 20, 0.55); }
+.mg-v .ic { flex: none; width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; font-size: 22px; background: linear-gradient(140deg, #fbf6f1, #f1d9d6); border: 1px solid rgba(70, 27, 20, 0.1); }
+.mg-v h4 { margin: 2px 0 4px; font: italic 500 20px 'Playfair Display', serif; color: #461b14; }
+.mg-v p { margin: 0; font: 400 14.5px/1.55 Montserrat; color: #6b4a46; }
+@media (max-width: 900px) {
+  .mg-flow { grid-template-columns: 1fr; }
+  .mg-arrow { width: 70px; justify-self: center; transform: rotate(90deg); }
+  .mg-vs { grid-template-columns: 1fr; }
+}
+
+/* Tarjeta de Margaritas en la portada: misma estructura y tamaño que la de SMD, con sus colores */
+.mgx .glow { background: radial-gradient(circle, rgba(224, 160, 170, 0.45), transparent 65%); }
+.mgx .browser { box-shadow: 0 40px 80px -40px rgba(70, 27, 20, 0.6), 0 0 0 1px rgba(70, 27, 20, 0.14); }
+.mgx .browser-bar { background: #f7ece4; border-bottom-color: rgba(70, 27, 20, 0.1); }
+.mgx .browser-bar i { background: #e0cbb9 !important; } .mgx .browser-bar i:nth-child(2) { background: #d4b0a6 !important; } .mgx .browser-bar i:nth-child(3) { background: #7d5255 !important; }
+.mgx .browser-bar b { font-family: 'Inter', sans-serif; color: #7d5255; }
+.mgx .phone { box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(224, 203, 185, 0.85), inset 0 0 0 1px rgba(255, 255, 255, 0.14) !important; }
+.mgx .chip { background: #fff; color: #461b14; border-color: rgba(70, 27, 20, 0.12); }
+.mgx .chip.c1 { top: -18px; left: 6%; right: auto; bottom: auto; } .mgx .chip.c2 { bottom: -18px; left: 10%; right: auto; top: auto; }
+/* Proyecto web en espejo (tarjeta a la izquierda): mismas medidas que .showcase.rev.desk */
+.showcase.desk:not(.rev) { grid-template-columns: minmax(320px, 600px) 1fr; }
+@media (max-width: 900px) { .showcase.desk:not(.rev) { grid-template-columns: 1fr; } }
