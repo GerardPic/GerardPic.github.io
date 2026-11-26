@@ -28,8 +28,8 @@
   $$('.reveal').forEach((el) => io.observe(el));
   function count(el) {
     if (el._done) return; el._done = true;
-    const to = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now(), dur = reduce ? 0 : 1600;
-    const step = (t) => { const k = dur ? Math.min(1, (t - t0) / dur) : 1, e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e) + suf; if (k < 1) requestAnimationFrame(step); };
+    const to = +el.dataset.count, suf = el.dataset.suffix || '', sep = el.dataset.sep, f = (n) => (sep ? String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep) : n), t0 = performance.now(), dur = reduce ? 0 : 1600;
+    const step = (t) => { const k = dur ? Math.min(1, (t - t0) / dur) : 1, e = 1 - Math.pow(1 - k, 3); el.textContent = f(Math.round(to * e)) + suf; if (k < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   }
 
@@ -214,7 +214,7 @@
   // Logos animados de los proyectos (Cowboy Runner con Rye, Helios con Orbitron, Postal Sounds con Jost): empiezan cuando ya cargó
   // su letra, para que no cambien de forma ni salten a mitad de la animación; fuera de la cabecera
   // esperan además a que se vean
-  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron'], ['.pslogo', '700 1em Jost'], ['.smdlogo', '800 1em "Bricolage Grotesque"']].forEach(([sel, face]) => {
+  [['.crl', '400 1em Rye'], ['.hlogo', '900 1em Orbitron'], ['.pslogo', '700 1em Jost'], ['.smdlogo', '800 1em "Bricolage Grotesque"'], ['.bvlogo', '600 1em "Cormorant Garamond"']].forEach(([sel, face]) => {
     const els = $$(sel);
     if (!els.length) return;
     const go = (el) => el.classList.remove('late');

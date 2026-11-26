@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bóveda · Gerard</title>
+<meta name="description" content="Bóveda: Android app to catalog a banknote collection by continent and country, with front and back photos, a trash bin and Google Drive backup.">
+<meta name="theme-color" content="#080c12">
+<meta property="og:title" content="Bóveda">
+<meta property="og:description" content="Your banknote collection, kept like in a vault.">
+<meta property="og:image" content="https://gerardpic.dev/img/bv-billete.webp">
+<link rel="icon" href="../../img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="../../img/logo-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../estilo.css">
+<link rel="alternate" hreflang="es" href="https://gerardpic.dev/boveda/">
+<link rel="alternate" hreflang="en" href="https://gerardpic.dev/en/boveda/">
+</head>
+<body class="bv">
+<div class="progress" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../../en/"><span class="logo"><img src="../../img/logo.svg" alt="" width="36" height="36"></span><span class="name">Gerard</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#coleccion">The collection</a><a href="#capturas">Screenshots</a><a href="#app">The app</a>
+      <a href="../../en/" class="opt">Home</a>
+      <a class="lang" href="../../boveda/" hreflang="es" lang="es" title="Español">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-label="Bóveda">
+    <div class="bv-sky" aria-hidden="true">
+      <div class="bv-engrave"></div>
+      <svg class="bv-rose" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width=".18"><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(0.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(7.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(15.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(22.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(30.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(37.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(45.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(52.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(60.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(67.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(75.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(82.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(90.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(97.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(105.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(112.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(120.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(127.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(135.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(142.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(150.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(157.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(165.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(172.5 50 50)"/></g></svg>
+      <svg class="bv-rose r2" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width=".22"><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(0.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(7.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(15.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(22.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(30.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(37.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(45.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(52.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(60.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(67.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(75.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(82.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(90.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(97.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(105.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(112.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(120.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(127.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(135.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(142.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(150.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="14" transform="rotate(157.5 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="17" transform="rotate(165.0 50 50)"/><ellipse cx="50" cy="50" rx="48" ry="20" transform="rotate(172.5 50 50)"/></g></svg>
+      <div class="bv-gold"><i style="left:43%;--z:2px;--d:17s;--w:-20s;--x:-54px"></i><i style="left:11%;--z:4px;--d:12s;--w:-11s;--x:14px"></i><i style="left:9%;--z:4px;--d:14s;--w:-1s;--x:-49px"></i><i style="left:57%;--z:3px;--d:12s;--w:-7s;--x:-49px"></i><i style="left:72%;--z:3px;--d:11s;--w:-18s;--x:-45px"></i><i style="left:30%;--z:4px;--d:11s;--w:-18s;--x:14px"></i><i style="left:52%;--z:2px;--d:14s;--w:-1s;--x:11px"></i><i style="left:19%;--z:3px;--d:17s;--w:-4s;--x:9px"></i><i style="left:17%;--z:4px;--d:15s;--w:-17s;--x:44px"></i><i style="left:89%;--z:2px;--d:12s;--w:-18s;--x:13px"></i><i style="left:83%;--z:2px;--d:16s;--w:-3s;--x:10px"></i><i style="left:93%;--z:2px;--d:20s;--w:-1s;--x:19px"></i><i style="left:28%;--z:3px;--d:21s;--w:-17s;--x:-6px"></i><i style="left:42%;--z:3px;--d:20s;--w:-14s;--x:-14px"></i><i style="left:40%;--z:2px;--d:13s;--w:-7s;--x:-50px"></i><i style="left:75%;--z:3px;--d:19s;--w:-15s;--x:52px"></i><i style="left:45%;--z:3px;--d:15s;--w:-19s;--x:-51px"></i><i style="left:17%;--z:4px;--d:17s;--w:-5s;--x:36px"></i></div>
+    </div>
+    <div class="wrap hero-in">
+      <div>
+        <span class="pill"><span class="live"></span>Coming soon to Google Play</span>
+        <h1 class="bvh1"><span class="sr">Bóveda</span><span class="bvlogo late " aria-hidden="true"><span class="bv-med"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="bvGh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbefc8"/><stop offset=".5" stop-color="#e0b86a"/><stop offset="1" stop-color="#a87a32"/></linearGradient></defs><circle class="m-ring" cx="50" cy="50" r="47" fill="none" stroke="url(#bvGh)" stroke-width="2.2"/><g class="m-rose" fill="none" stroke="#e0b86a" stroke-opacity=".55" stroke-width=".7"><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(0 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(15 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(30 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(45 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(60 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(75 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(90 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(105 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(120 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(135 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(150 50 50)"/><ellipse cx="50" cy="50" rx="44" ry="17" transform="rotate(165 50 50)"/></g><circle cx="50" cy="50" r="27" fill="#0b1018" stroke="url(#bvGh)" stroke-width="1.4"/><text class="m-b" x="50" y="62" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="36" fill="url(#bvGh)">B</text></svg></span><span class="bv-word"><span style="--i:0">B</span><span style="--i:1">ó</span><span style="--i:2">v</span><span style="--i:3">e</span><span style="--i:4">d</span><span style="--i:5">a</span></span></span></h1>
+        <span class="bv-tag">Your banknote collection</span>
+        <p class="typed" data-typed='["Every banknote, front and back.", "Groups by continent, countries with flag and coat of arms.", "No account: everything stays on your phone.", "Private backup in your Google Drive."]'><b></b><span class="caret"></span></p>
+        <div class="btns">
+          <span class="btn off" title="Google Play · coming soon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 2.6v18.8c0 .6.6 1 1.1.7l16.3-9.4c.5-.3.5-1.1 0-1.4L5.1 1.9C4.6 1.6 4 2 4 2.6Z"/></svg>Google Play · coming soon</span>
+          <a class="btn main" href="#capturas">See the app</a>
+        </div>
+      </div>
+      <div class="hero-card bv-card" data-tilt>
+        <div class="glow"></div>
+        <div class="phone tall" data-slides><div class="screen"><img src="../../img/bv-inicio.webp" fetchpriority="high" alt="Bóveda: Home screen: 3,250 banknotes, 235 countries and the groups by continent" width="720" height="1584" decoding="async"><img data-src="../../img/bv-pais.webp" alt="Bóveda: Vietnam with its coat of arms, flag, currency and language, and its numbered banknotes" width="720" height="1584" decoding="async"><img data-src="../../img/bv-billete.webp" alt="Bóveda: Detail of the 5,000 dong banknote from Vietnam, front and back" width="720" height="1584" decoding="async"><img data-src="../../img/bv-pais2.webp" alt="Bóveda: Bhutan and its ngultrum banknotes" width="720" height="1584" decoding="async"><img data-src="../../img/bv-grupo.webp" alt="Bóveda: The Indochina group: 6 countries, 109 banknotes and 6 currencies" width="720" height="1584" decoding="async"><img data-src="../../img/bv-billete2.webp" alt="Bóveda: 100 rufiyaa banknote from the Maldives" width="720" height="1584" decoding="async"><img data-src="../../img/bv-drive.webp" alt="Bóveda: Backup of the collection in each person's Google Drive" width="720" height="1584" decoding="async"></div></div>
+        <div class="dots" aria-label="Screenshots"></div>
+        <div class="chip c1"><span><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-flag"/></svg></span>235 countries</div><div class="chip c2"><span><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-cloud"/></svg></span>Google Drive</div><div class="chip c3"><span><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-note"/></svg></span>3,250 banknotes</div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"></div>
+  </section>
+
+  <section id="coleccion">
+    <div class="wrap bv-collect">
+      <div>
+        <span class="kicker grad-text reveal">The collection</span>
+        <h2 class="reveal" style="--d:.05s">Every banknote, <em>front and back</em></h2>
+        <p class="lead reveal" style="--d:.1s">Each banknote is stored with a photo of its front and back. In the app one tap flips it, and a long press zooms in on the details: watermarks, signatures and serial numbers.</p>
+        <ul class="ticks reveal" style="--d:.15s"><li>Groups by continent and countries with flag, coat of arms, capital, currency and language</li><li>Banknotes numbered in the order the collector chooses</li><li>Search by country, capital or currency</li></ul>
+      </div>
+      <figure class="bv-note reveal" style="--d:.1s" data-notes="2601:Bhutan · 1 ngultrum|2636:Maldives · 100 rufiyaa|712:Vietnam · 5,000 dong">
+        <button type="button" class="bv-note-in" aria-label="Flip the banknote">
+          <img class="front" src="../../img/bv-nota-2601-a.webp" alt="Bhutan · 1 ngultrum" width="760" height="370" loading="lazy" decoding="async">
+          <img class="back" src="../../img/bv-nota-2601-r.webp" alt="" width="760" height="370" loading="lazy" decoding="async">
+        </button>
+        <figcaption><b>Bhutan · 1 ngultrum</b><span><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-flip"/></svg>Tap the banknote to flip it</span></figcaption>
+        <div class="bv-note-dots"></div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="capturas">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">Screenshots</span>
+      <h2 class="reveal" style="--d:.05s">A vault in your pocket</h2>
+      <p class="lead reveal" style="--d:.1s">Screenshots of the app with a real collection of 3,250 banknotes. Swipe to see more. The app is in Spanish.</p>
+      <div class="shots tall reveal" style="--d:.15s">
+        <img src="../../img/bv-inicio.webp" alt="Home screen: 3,250 banknotes, 235 countries and the groups by continent" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-paises.webp" alt="Country list with flag, capital, currency and number of banknotes" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-pais.webp" alt="Vietnam with its coat of arms, flag, currency and language, and its numbered banknotes" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-billete.webp" alt="Detail of the 5,000 dong banknote from Vietnam, front and back" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-pais2.webp" alt="Bhutan and its ngultrum banknotes" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-billete2.webp" alt="100 rufiyaa banknote from the Maldives" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-grupo.webp" alt="The Indochina group: 6 countries, 109 banknotes and 6 currencies" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-agregar.webp" alt="Adding a banknote with front and back photos" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-drive.webp" alt="Backup of the collection in each person's Google Drive" loading="lazy" decoding="async" width="720" height="1584">
+        <img src="../../img/bv-papelera.webp" alt="Trash: deleted banknotes are kept for 30 days" loading="lazy" decoding="async" width="720" height="1584">
+      </div>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">The app</span>
+      <h2 class="reveal" style="--d:.05s">What it does</h2>
+      <div class="stats" style="margin:34px 0 18px"><div class="stat reveal" style="--d:0.00s"><b class="grad-text" data-count="3250" data-sep=",">0</b><span>banknotes in the test collection</span></div><div class="stat reveal" style="--d:0.08s"><b class="grad-text" data-count="235">0</b><span>countries with flag and coat of arms</span></div><div class="stat reveal" style="--d:0.16s"><b class="grad-text" data-count="6">0</b><span>continents to start with</span></div><div class="stat reveal" style="--d:0.24s"><b class="grad-text" data-count="30">0</b><span>days in the trash bin</span></div></div>
+      <div class="feats"><div class="glowcard reveal" style="--d:0.00s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-flip"/></svg></div><h4>Front and back</h4><p>The banknote flips in 3D with a tap and zooms in to see every detail.</p></div><div class="glowcard reveal" style="--d:0.06s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-lock"/></svg></div><h4>No account</h4><p>It opens straight away and everything stays on the phone. Nothing leaves it unless you ask.</p></div><div class="glowcard reveal" style="--d:0.12s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-cloud"/></svg></div><h4>Google Drive backup</h4><p>A private copy in each person's Drive, automatic once a day on wifi. Change phones and get everything back.</p></div><div class="glowcard reveal" style="--d:0.18s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-globe"/></svg></div><h4>Ready-made catalog</h4><p>Six continents with their countries, flags and coats of arms from the very first launch.</p></div><div class="glowcard reveal" style="--d:0.24s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-trash"/></svg></div><h4>30-day trash bin</h4><p>Anything deleted goes back to its country and its place with one tap.</p></div><div class="glowcard reveal" style="--d:0.30s"><div class="ic"><svg class="ico" aria-hidden="true"><use href="/img/iconos.svg#i-share"/></svg></div><h4>Sharing</h4><p>Send one or several chosen banknotes through WhatsApp, with their photos.</p></div></div>
+    </div>
+  </section>
+
+  <section id="origen">
+    <div class="wrap">
+      <span class="kicker grad-text reveal">How it started</span>
+      <h2 class="reveal" style="--d:.05s">From a custom app <em>to a product</em></h2>
+      <p class="lead reveal" style="--d:.1s">Bóveda started as an app built for a collector with more than 3,000 banknotes: sync across three devices, photos in the cloud and AI that recognizes a banknote from a photo. With what I learned, I redesigned it from scratch so any collector can use it.</p>
+      <div class="bv-origin"><div class="glowcard bv-ocol reveal" style="--d:0.00s"><h4>The custom app</h4><ul class="ticks"><li>Two-way sync between a tablet and two phones</li><li>FastAPI server with Postgres and photos on Cloudflare R2</li><li>OpenAI-powered AI that analyzes the photo and warns if the banknote is already there</li></ul></div><div class="glowcard bv-ocol reveal" style="--d:0.08s"><h4>Bóveda</h4><ul class="ticks"><li>New design: ink, gold, guilloche and frosted glass</li><li>No account or server, so it ships with no fixed costs</li><li>Google Drive backup and, later on, a paid version with its own cloud</li></ul></div></div>
+      <div class="glowcard bv-stack reveal"><h4>Built with</h4><div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Room</span><span class="tag">Coil</span><span class="tag">Haze</span><span class="tag">WorkManager</span><span class="tag">Google Drive API</span><span class="tag">Robolectric</span><span class="tag">Roborazzi</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Cloudflare R2</span><span class="tag">OpenAI</span></div></div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="kicker grad-text">Got an idea?</span>
+        <h2>Want an app like this?</h2>
+        <p>I design and build mobile apps end to end: from the first screen to the Google Play listing.</p>
+        <div class="btns">
+          <a class="btn main" href="../services/"><span>See packages and prices</span></a>
+          <a class="btn" data-mail="gerardopico123|gmail.com" href="#contacto">Email me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Gerard · GerardPic</span>
+    <span><a href="../../en/">Home</a> · <a href="../../privacidad.html">Privacy policy</a></span>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('[data-mail]').forEach((a) => { const [u, d] = a.dataset.mail.split('|'), m = u + '@' + d; a.href = 'mailto:' + m; a.title = m; });
+  // Billete que gira: toque para voltearlo; solo, cada pocos segundos, y pasa al siguiente billete
+  document.querySelectorAll('.bv-note').forEach((fig) => {
+    const notes = fig.dataset.notes.split('|').map((x) => x.split(':')), btn = fig.querySelector('.bv-note-in');
+    const [front, back] = fig.querySelectorAll('img'), cap = fig.querySelector('figcaption b'), dots = fig.querySelector('.bv-note-dots');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let k = 0, flips = 0, timer;
+    const src = (id, s) => front.src.replace(/bv-nota-[^/]+$/, 'bv-nota-' + id + '-' + s + '.webp');
+    notes.forEach((n, i) => { const d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', n[1]); d.onclick = () => { show(i); restart(); }; dots.append(d); });
+    const mark = () => [...dots.children].forEach((d, i) => d.classList.toggle('on', i === k));
+    const show = (i) => {
+      k = i; fig.classList.remove('flip'); flips = 0;
+      const [id, label] = notes[k], a = new Image(), r = new Image();
+      a.src = src(id, 'a'); r.src = src(id, 'r');
+      a.decode().catch(() => {}).then(() => { front.src = a.src; back.src = r.src; front.alt = label; cap.textContent = label; mark(); });
+    };
+    const step = () => { if (flips < 1) { fig.classList.toggle('flip'); flips++; } else show((k + 1) % notes.length); };
+    const restart = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => { if (!document.hidden && fig.dataset.seen) step(); }, 3600); };
+    btn.addEventListener('click', () => { fig.classList.toggle('flip'); restart(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) fig.dataset.seen = 1; else delete fig.dataset.seen; })).observe(fig);
+    mark(); restart();
+  });
+</script>
+<script src="../../efectos.js" defer></script>
+</body>
+</html>

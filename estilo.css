@@ -828,6 +828,7 @@ body.ps ::selection { background: #bfef2b; color: #121312; }
 /* En modo claro el logo de la portada va sobre su fondo oscuro de marca, para que el verde lima se lea */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) .show-txt .pslogo { padding: 0.32em 0.5em; border-radius: 14px; background: #161817; filter: none; }
+  :root:not([data-theme="dark"]) .show-txt .bvlogo { padding: 0.22em 0.42em 0.22em 0.26em; border-radius: 16px; background: radial-gradient(120% 140% at 20% 0%, #17202d, #080c12); box-shadow: 0 14px 30px -16px rgba(8, 12, 18, 0.6); }
 }
 
 /* Postal Sounds: categorías, ciudades y virtudes */
@@ -1331,3 +1332,88 @@ body.mg .brand { font-family: Sora, sans-serif; }
 }
 @media (max-width: 600px) { .sv-chip { font-size: 12px; } .sv-c0 { left: 0; } .sv-c1 { right: 0; } }
 @media (prefers-reduced-motion: reduce) { .sv-p, .sv-chip, .sm-pin { animation: none; } }
+
+/* ===== Bóveda: tinta oscura, oro y guilloche, como la app ===== */
+body.bv {
+  color-scheme: dark;
+  --bg: #080c12; --bg2: #0e141d; --card: rgba(232, 196, 120, 0.04); --card2: rgba(232, 196, 120, 0.07);
+  --line: rgba(226, 188, 112, 0.16); --fg: #f4ede0; --mut: #b3aa99; --dim: #79725f;
+  --a1: #f7e6b8; --a2: #e0b86a; --a3: #b98a3e; --a4: #7da3c4;
+  --grad: linear-gradient(120deg, #fbefc8, #e6bf6e 45%, #b98a3e 80%, #f2d898);
+  --shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(80% 50% at 85% 0%, rgba(224, 184, 106, 0.08), transparent 60%), radial-gradient(60% 40% at 0% 100%, rgba(125, 163, 196, 0.06), transparent 60%), var(--bg);
+}
+body.bv .top.solid { background: color-mix(in srgb, #080c12 84%, transparent); }
+body.bv ::selection { background: #e0b86a; color: #080c12; }
+.bv h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; letter-spacing: 0; font-size: clamp(36px, 5vw, 62px); }
+.bv .btn.main { background: linear-gradient(180deg, #f6dd9c, #d7a955 60%, #b98a3e); color: #1a1206; box-shadow: 0 14px 30px -12px rgba(224, 184, 106, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.5); }
+.bv .hero .glow, .bv-card .glow { background: radial-gradient(circle, rgba(230, 190, 110, 0.4), transparent 65%); }
+.bv .pill .live { background: #e0b86a; box-shadow: 0 0 0 4px rgba(224, 184, 106, 0.18); }
+
+/* Cabecera: grabado guilloche que gira despacio, brillo dorado y polvo de oro */
+.bv .hero { background: radial-gradient(110% 80% at 75% 20%, #17202d 0%, #0b1018 50%, #06090e 100%); }
+.bv-sky { position: absolute; inset: 0; z-index: -1; overflow: hidden; contain: paint; pointer-events: none; }
+.bv-engrave { position: absolute; inset: 0; background: repeating-radial-gradient(circle at 78% 42%, rgba(224, 184, 106, 0.07) 0 1px, transparent 1px 9px); -webkit-mask: radial-gradient(60% 70% at 78% 42%, #000, transparent 75%); mask: radial-gradient(60% 70% at 78% 42%, #000, transparent 75%); }
+.bv-rose { position: absolute; right: -14vmax; top: 50%; width: 82vmax; height: 82vmax; translate: 0 -50%; color: #e0b86a; opacity: 0.17; animation: bvSpin 160s linear infinite; }
+.bv-rose.r2 { opacity: 0.12; width: 60vmax; height: 60vmax; right: -3vmax; animation-duration: 110s; animation-direction: reverse; }
+.bv-gold i { position: absolute; bottom: -10px; width: var(--z); height: var(--z); border-radius: 50%; background: #f3d590; box-shadow: 0 0 6px #e0b86a; opacity: 0; animation: bvDust var(--d) var(--w) linear infinite; }
+@keyframes bvSpin { to { rotate: 360deg; } }
+@keyframes bvDust { 0% { transform: translate3d(0, 0, 0); opacity: 0; } 12% { opacity: 0.8; } 85% { opacity: 0.5; } 100% { transform: translate3d(var(--x), -90vh, 0); opacity: 0; } }
+
+/* Logotipo: medallón con la B y la palabra en serifa, con un destello que pasa */
+.bvlogo { display: inline-flex; align-items: center; gap: 0.32em; white-space: nowrap; font: 600 clamp(52px, 7vw, 92px)/1 'Cormorant Garamond', Georgia, serif; }
+.bvlogo .bv-med { width: 1.15em; height: 1.15em; flex: none; filter: drop-shadow(0 0 14px rgba(224, 184, 106, 0.35)); }
+.bv-med svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.bv-med .m-ring { stroke-dasharray: 300; stroke-dashoffset: 0; }
+.bv-med .m-rose { transform-box: view-box; transform-origin: 50% 50%; animation: bvSpin 40s linear infinite; }
+.bvlogo .bv-word { position: relative; display: inline-flex; background: linear-gradient(105deg, transparent 42%, rgba(255, 252, 238, 0.95) 50%, transparent 58%) 160% 0 / 300% 100% no-repeat, linear-gradient(180deg, #fff6dc 0%, #f1d38f 45%, #c99a48 78%, #9c6f2c 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: 0.08em; animation: bvShine 5.5s 2.4s ease-in-out infinite; }
+.bvlogo .bv-word span { display: inline-block; color: transparent; }
+.bvlogo:not(.late) .bv-med .m-ring { animation: bvDraw 1.4s 0.1s cubic-bezier(.65, 0, .35, 1) both; }
+.bvlogo:not(.late) .bv-med .m-b { animation: bvB 0.9s 0.9s cubic-bezier(.16, 1, .3, 1) both; }
+.bvlogo:not(.late) .bv-word span { animation: bvLetter 0.9s calc(0.6s + var(--i) * 0.07s) cubic-bezier(.16, 1, .3, 1) both; }
+.bvlogo.late .bv-word, .bvlogo.late .bv-med { opacity: 0; }
+.bvlogo.small { font-size: clamp(40px, 4.6vw, 60px); }
+.bv-tag { display: block; margin: 12px 0 4px; font: 600 12.5px Inter, sans-serif; letter-spacing: 0.34em; text-transform: uppercase; color: #c9a55e; }
+@keyframes bvDraw { from { stroke-dashoffset: 300; } }
+.bv-med .m-b { transform-box: view-box; transform-origin: 50% 50%; }
+@keyframes bvB { from { opacity: 0; transform: scale(0.6); } }
+@keyframes bvLetter { from { opacity: 0; transform: translate3d(0, 0.45em, 0); filter: blur(6px); } }
+@keyframes bvShine { 0% { background-position: 160% 0, 0 0; } 30%, 100% { background-position: -60% 0, 0 0; } }
+
+/* Billete que gira: anverso y reverso reales */
+.bv-note { perspective: 1400px; width: min(560px, 100%); margin: 0 auto; cursor: pointer; }
+.bv-note-in { position: relative; aspect-ratio: 2.1 / 1; transform-style: preserve-3d; transition: transform 1.1s cubic-bezier(.3, .7, .2, 1); animation: bvSway 7s ease-in-out infinite; }
+.bv-note.flip .bv-note-in { transform: rotateY(180deg); }
+.bv-note img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; -webkit-backface-visibility: hidden; backface-visibility: hidden; box-shadow: 0 30px 50px -24px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 240, 200, 0.12); }
+.bv-note img.back { transform: rotateY(180deg); }
+.bv-note figcaption { margin-top: 18px; text-align: center; color: var(--mut); font-size: 14px; }
+@keyframes bvSway { 50% { translate: 0 -8px; } }
+.bv-collect { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 900px) { .bv-collect { grid-template-columns: 1fr; gap: 30px; } }
+
+/* Tarjeta en la portada y teléfono en la cabecera */
+.bv-card .chip span .ico, .bv .chip span .ico { color: #e0b86a; }
+.bvh3 { margin: 14px 0 10px; }
+@media (prefers-reduced-motion: reduce) {
+  .bv-rose, .bv-gold i, .bv-med .m-rose, .bvlogo .bv-word, .bv-note-in { animation: none !important; }
+}
+.hero h1.bvh1 { margin: 22px 0 0; line-height: 1; }
+.bv-note-in { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; color: inherit; }
+.bv-note-in:focus-visible { outline: 2px solid #e0b86a; outline-offset: 6px; border-radius: 12px; }
+.bv-note figcaption { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.bv-note figcaption b { font: 600 22px 'Cormorant Garamond', Georgia, serif; color: var(--fg); }
+.bv-note figcaption span { display: inline-flex; align-items: center; gap: 7px; font-size: 13.5px; }
+.bv-note figcaption .ico { width: 17px; height: 17px; color: #e0b86a; }
+.bv-note-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.bv-note-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--fg) 25%, transparent); cursor: pointer; transition: width 0.35s, background 0.35s; }
+.bv-note-dots button.on { width: 24px; background: #e0b86a; }
+.bv-note-in::after { content: ""; position: absolute; inset: -14% -8%; z-index: -1; background: radial-gradient(closest-side, rgba(224, 184, 106, 0.22), transparent); filter: blur(10px); }
+.bv-origin { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 30px 0 18px; }
+.bv-ocol, .bv-stack { padding: 24px 26px; }
+.bv-ocol h4 { font: 600 24px 'Cormorant Garamond', Georgia, serif; margin: 0 0 10px; color: #f1d38f; }
+.bv-stack h4 { margin: 0 0 12px; }
+.bv-stack .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.bv em { font-style: italic; color: #f1d38f; }
+.bv .bv-card .chip.c3 { top: auto; bottom: 18%; left: -10%; }
+@media (max-width: 760px) { .bv-origin { grid-template-columns: 1fr; } .bv .bv-card .chip.c3 { left: 0; bottom: 10%; } }
+.bv #coleccion { overflow-x: clip; }
